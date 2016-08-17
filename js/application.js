@@ -63,7 +63,7 @@ function questionController($scope, $http, $log, $document,$state) {
             vm.currnetQuestionIndex = 0;
             vm.setsMaxIndex = vm.test.sets.length - 1;
             vm.currentQuestionNum =  1;
-            console.log(vm.test);
+           
             calcQuestioPercent();
         });
 
@@ -77,10 +77,7 @@ function questionController($scope, $http, $log, $document,$state) {
             $scope.sampleoption = $scope.sampletest.options;
            
            
-            
-            console.log($scope.sampletest);
-            console.log($scope.sampletest.question);
-             console.log($scope.sampletest.options[1]);
+          
            
         });
 
@@ -91,7 +88,7 @@ function questionController($scope, $http, $log, $document,$state) {
             $scope.InstructionPage=true;
             $scope.InstructionPage1 = false;
 
-            console.log("Start"+ $scope.InstructionPage1);
+            
             
     
 };
@@ -100,18 +97,18 @@ $scope.exitAssessment = function() {
    
      $scope.InstructionPage1=true;
 $state.reload();
-     console.log("Exit Assessment"+ $scope.InstructionPage);
+     
 };
         $scope.check=false;
         $scope.timercheck=false;
-  console.log($scope.check);
+  
       
     $scope.startEvaluation = function() {
     $scope.check=true;
 
     var timeLimit = 60 * 10;
     startTimer(timeLimit);
-    console.log($scope.check);
+    
 };
 $scope.count =1;
 
@@ -119,7 +116,7 @@ $scope.count =1;
 function endAssessment() {
         $scope.count +=1;
      $scope.InstructionPage1 = false;
-    console.log("My Count" + $scope.count);
+   
 }
 
     vm.showNextQuestion = function() {
@@ -130,9 +127,7 @@ function endAssessment() {
             vm.currnetQuestionIndex += 1;
             vm.test.currentQuestion = vm.test.questions[vm.currnetQuestionIndex];
              vm.currentQuestionNum +=  1;
-              console.log(vm.currnetQuestionIndex);
-            console.log(vm.currentQuestion);
-            console.log(vm.sectionQuestions);
+             
         } 
         
         else if ((vm.currnetQuestionIndex < vm.sectionQuestions - 1) || vm.test.set < vm.setsMaxIndex

@@ -6516,7 +6516,7 @@ table.time {
   background-color: #fff; }
 
 .you-are-about-to-com {
-  width: 336px;
+  width: 466px;
   height: 32px;
   font-family: proxima_regular;
   font-size: 18px;
@@ -6537,7 +6537,7 @@ table.time {
   font-weight: 700; }
 
 .additional-informati {
-  width: 160px;
+  width: 350px;
   height: 25px;
   font-weight: 700; }
 
@@ -6553,7 +6553,7 @@ table.time {
   border: solid 1px rgba(0, 0, 0, 0.2); }
 
 .working-with-informa {
-  width: 203px;
+  width: 350px;
   padding-bottom: 10px;
   font-size: 18px;
   font-weight: 600;
@@ -6758,6 +6758,36 @@ h1.section-heading.question {
   padding-left: 15px;
   padding-right: 15px; }
 
+.btn-ceb1 {
+  outline: none;
+  margin-top: 15px;
+  font-size: 16px;
+  color: white;
+  height: 44px;
+  border-radius: 0px;
+  font-family: 'proxima_semibold';
+  border: 0px;
+  width: 100%;
+  color: white;
+  /* For browsers that do not support gradients */
+  /* For Safari 5.1 to 6.0 */
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#00c8f3, #0097f3);
+  /* For Firefox 3.6 to 15 */
+  color: #00adee;
+  background: linear-gradient(white, #f3f3f3);
+  box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.15), 0px 3px 8px 0px rgba(0, 199, 243, 0.3); }
+  .btn-ceb1 .saved-for-later {
+    color: #00adee;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    /* For browsers that do not support gradients */
+    /* For Safari 5.1 to 6.0 */
+    /* For Opera 11.1 to 12.0 */
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white, #f3f3f3);
+    /* Standard syntax */
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2); }
+
 .btn-ceb {
   outline: none;
   margin-top: 15px;
@@ -6792,6 +6822,15 @@ h1.section-heading.question {
   color: white; }
 
 .btn-ceb:hover {
+  color: white;
+  /* For browsers that do not support gradients */
+  /* For Safari 5.1 to 6.0 */
+  /* For Opera 11.1 to 12.0 */
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#00c8f3, #0097f3);
+  box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.15), 0px 3px 8px 0px rgba(0, 199, 243, 0.3); }
+
+.btn-ceb1:hover {
   color: white;
   /* For browsers that do not support gradients */
   /* For Safari 5.1 to 6.0 */
