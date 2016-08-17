@@ -1,0 +1,515 @@
+{
+
+        "totalQuestions": 25,
+        "sets":[ {
+            "questions": [
+
+
+                {
+                    "question": "What was the amount of the June 9, 2007 purchase?",
+                    "options": [{
+                        "option": "$310.12",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "$278.45",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "$55.75",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "$98.15",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "$115.35",
+                        "isCorrect": "No"
+                    }]
+                }, {
+                    "question": "What was the amount of the July 10, 2007 purchase?",
+                    "options": [{
+                        "option": "$310.12",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "$278.45",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "$55.75",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "$98.15",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "$115.35",
+                        "isCorrect": "Yes"
+                    }]
+                }, {
+                    "question": "What is the minimum required purchase for a Retailer Discount?",
+                    "options": [{
+                        "option": "$100.00",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "$102.50",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "$200.00",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "$210.00",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "$300.00",
+                        "isCorrect": "No"
+                    }]
+                }, {
+                    "question": "What is the minimum required purchase for the Retailer Cash-Back Bonus?",
+                    "options": [{
+                        "option": "$300.00",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "$100.00",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "$210.00",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "$102.50",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "$200.00",
+                        "isCorrect": "No"
+                    }]
+                }, {
+                    "question": "When was the purchase of $310.12 made?",
+                    "options": [{
+                        "option": "12/05/2007",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "09/06/2007",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "22/06/2007",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "03/07/2007",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "10/07/2007",
+                        "isCorrect": "No"
+                    }]
+                }, {
+                    "question": "How many customer transactions are eligible for the Retailer Cash-Back Bonus?",
+                    "options": [{
+                        "option": 0,
+                        "isCorrect": "No"
+                    }, {
+                        "option": 1,
+                        "isCorrect": "No"
+                    }, {
+                        "option": 2,
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": 4,
+                        "isCorrect": "No"
+                    }, {
+                        "option": 5,
+                        "isCorrect": "No"
+                    }]
+                }, {
+                    "question": "How many customer transactions are not eligible for the Retailer Cash-Back Bonus?",
+                    "options": [{
+                        "option": 0,
+                        "isCorrect": "No"
+                    }, {
+                        "option": 1,
+                        "isCorrect": "No"
+                    }, {
+                        "option": 2,
+                        "isCorrect": "No"
+                    }, {
+                        "option": 4,
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": 5,
+                        "isCorrect": "No"
+                    }]
+                }, {
+                    "question": "How many customer transactions are eligible for the Retailer Cash-Back Bonus in June?",
+                    "options": [{
+                        "option": 0,
+                        "isCorrect": "No"
+                    }, {
+                        "option": 1,
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": 2,
+                        "isCorrect": "No"
+                    }, {
+                        "option": 3,
+                        "isCorrect": "No"
+                    }, {
+                        "option": 4,
+                        "isCorrect": "No"
+                    }]
+                }, {
+                    "question": "The Retailer Discount and Retailer Cash-Back Bonus have a limited program length.  For which of the following dates would the discounts not apply?",
+                    "options": [{
+                        "option": "03/06/2007",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "13/06/2007",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "01/07/2007",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "13/07/2007",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "21/12/2007",
+                        "isCorrect": "Yes"
+                    }]
+                }, {
+                    "question": "How many customer transactions are eligible for both the Retailer Discount and Cash-Back Bonus in June?",
+                    "options": [{
+                        "option": 0,
+                        "isCorrect": "No"
+                    }, {
+                        "option": 1,
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": 2,
+                        "isCorrect": "No"
+                    }, {
+                        "option": 3,
+                        "isCorrect": "No"
+                    }, {
+                        "option": 4,
+                        "isCorrect": "No"
+                    }]
+                }, {
+                    "question": "How many customer transactions are eligible for the Retailer Discount in July?",
+                    "options": [{
+                            "option": 0,
+                            "isCorrect": "Yes"
+                        }, {
+                            "option": 1,
+                            "isCorrect": "No"
+                        }, {
+                            "option": 2,
+                            "isCorrect": "No"
+                        }, {
+                            "option": 3,
+                            "isCorrect": "No"
+                        }, {
+                            "option": 4,
+                            "isCorrect": "No"
+                        }
+
+                    ]
+                }
+            ]
+        },
+        {
+            "questions": [{
+                    "question": "To what type of account(s) does CL-50 belong?",
+                    "options": [{
+                        "option": "Platinum",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "Gold",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Silver",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Gold and Silver",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Platinum and Gold",
+                        "isCorrect": "No"
+                    }]
+                },
+
+
+                {
+                    "question": "To what type of account(s) does PA belong?",
+                    "options": [{
+                        "option": "Platinum",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "Gold",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Silver",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Gold and Silver",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Platinum and Gold",
+                        "isCorrect": "No"
+                    }]
+                },
+
+                {
+                    "question": "To what type of account(s) does DL belong?",
+                    "options": [{
+                        "option": "Platinum",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Gold",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Silver",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "Gold and Silver",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Platinum and Gold",
+                        "isCorrect": "No"
+                    }]
+                },
+
+
+                {
+                    "question": "Company XYZ has an insurance code of DL. What type of account and credit limit codes does it have?",
+                    "options": [{
+                        "option": "PA, CL-50",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Gold, CL-25",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Platinum, CL-10",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "SA, CL-10",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "Silver, CL-25",
+                        "isCorrect": "No"
+                    }]
+                },
+
+
+
+                {
+                    "question": "Company XYZ has an insurance code of DL. What type of account and overdraft fee codes does it have?",
+                    "options": [{
+                        "option": "SA, OD-25",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "PA, OD-75",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Gold, OD-50",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Platinum, OD-25",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Silver, OD-50",
+                        "isCorrect": "No"
+                    }]
+                },
+
+
+
+                {
+                    "question": "Company XYZ has an account code of SA. What type of insurance and credit limit codes does it have?",
+                    "options": [{
+                        "option": "DL, CL-10",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "DLP, CL-25",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "DLPJ, CL-10",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "DLPJ, CL-50",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "DL, CL-25",
+                        "isCorrect": "No"
+                    }]
+                },
+
+
+                {
+                    "question": "Which of the following series of codes is incorrect ? ",
+                    "options": [{
+                        "option": "GA, DLP",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "CL-10, OD-75",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "SA, OD-25",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "CL-50, DLPJ",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "PA, OD-75",
+                        "isCorrect": "No"
+                    }]
+                },
+
+
+                {
+                    "question": "Which of the following series of codes is incorrect ? ",
+                    "options": [{
+                        "option": "GA, DLP",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "GA, OD-75",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "SA, OD-25",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "CL-50, DLPJ",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "PA, OD-75",
+                        "isCorrect": "No"
+                    }]
+                },
+
+
+                {
+                    "question": "Which of the following series of codes is incorrect ? ",
+                    "options": [{
+                        "option": "PA, OD-75",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "CL-50, DLPJ",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "SA, OD-25",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "CL-50, OD-50",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "GA, DLP",
+                        "isCorrect": "No"
+                    }]
+                },
+
+
+                {
+                    "question": "Which of the following statements is true ? ",
+                    "options": [{
+                        "option": "Compared to Silver accounts, Platinum accounts have exactly five times the credit limit.",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "Compared to Silver accounts, Platinum accounts have exactly twice the credit limit.",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Compared to Platinum accounts, Silver accounts have exactly twice the credit limit.",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Compared to Gold accounts, Platinum accounts have exactly twice the overdraft fee.",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Compared to Silver accounts, Gold accounts have exactly twice the credit limit.",
+                        "isCorrect": "No"
+                    }]
+                },
+
+
+                {
+                    "question": "Which of the following statements is true ? ",
+                    "options": [{
+                        "option": "Compared to Gold accounts, Silver accounts have exactly half the overdraft fee.",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "Compared to Silver accounts, Platinum accounts have exactly half the credit limit.",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Compared to Platinum accounts, Silver accounts have exactly half the credit limit.",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Compared to Platinum accounts, Gold accounts have exactly half the overdraft fee.",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Compared to Gold accounts, Silver accounts have exactly half the credit limit.",
+                        "isCorrect": "No"
+                    }]
+                },
+
+
+                {
+                    "question": "Which of the following are the correct credit limit overdraftand insurance codes for a Platinum account ? ",
+                    "options": [{
+                        "option": "CL-50, OD-75, DJP",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "CL-75, OD-50, DJXY",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "CL-75, OD-50, DLP",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "CL-50, OD-75, DLPJ",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "CL-50, OD-25, DL",
+                        "isCorrect": "No"
+                    }]
+                },
+
+                {
+                    "question": "Which of the following are the correct account credit limit and insurance codes for a Platinum account ? ",
+                    "options": [{
+                        "option": "PA, CL-50, DLPJ",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "PA, CL-50, DJP",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "SA, CL-75, DJXY",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "SA, CL-75, DLP",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "PA, CL-50, DL",
+                        "isCorrect": "No"
+                    }]
+                },
+
+
+
+                {
+                    "question": "Which of the following are the correct overdraft fee codes for Silver Gold and Platinum accounts ? ",
+
+                    "options": [{
+                        "option": "CL-10, CL-25, CL-50",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "CL-10, OD-25, DL",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "OD-25, OD-50, OD-75",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "SA, GA, PA",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "DL, DLP, DLPJ",
+                        "isCorrect": "No"
+                    }]
+
+                }
+
+            ]
+
+        }]
+
+
+
+    }
+
