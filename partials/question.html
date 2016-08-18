@@ -1,699 +1,683 @@
 <!-- ****************
-Question page VIEW
- **************** -->
-<div ng-controller="questionController as ques">
-    <div id="sticky-anchor"></div>
-    <div id="sticky" ng-show="check && count!=21 && !timercheck">
-        <div class="timer-bar">
-            <uib-progressbar value="ques.percent">
-                <span class="sr-only">{{ques.percent}}</span>
-            </uib-progressbar>
-        </div>
-        <!--  timer -->
-       <table class="time" >
-            <tr>
-                <td></td>
-                <td class="fix"> <span ><img src="/images/timerClock.png" alt="Clock icon"> {{ques.display}}</span></td>
-                <td></td>
-            </tr>
-        </table>
-    </div>
-<div class="instructions-wrapper-first" ng-show="!InstructionPage || InstructionPage1">
-        <div class="container instructions">
-            <div class="row">
-                <div class="width-500" >
-                      <div class="you-are-about-to-com"> You are about to complete an assessment </div>
-                      <div class="assessment"> Assessment: </div>
-                      <p>Working with information</p>
-                      <div class="time-limit"><span style="font-weight:bold">Time Limit:</span></div>
-                      <p>You have <span style="font-weight:bold">10 minutes</span> to complete this test.</p>
-                      <div class="additional-informati" style="font-weight:bold"> Additional Information</div>
-                      <div class"if-you-lose-your-con">If you lose your connection, this test will restart where you left off. 
-                            You will not have an opportunity to review all questions at the end of this test.</div>
-                            <div class="divider"></div>
-                        <div class="working-with-informa "> Working with Information </div>
-                        <div class="instruction-list"><ol>
-                                    <li>The following is an evaluation of how workers process information.</li>
-                                    <li>You will be given information in the form of simulated computer screens or sets of instructions.</li>
-                                    <li>You will use the information provided to answer related questions.</li>
-                                    <li>Each question has five possible choices. Please choose the one correct option to each question.</li>
-                                    <li>Work quickly, but do not rush. If you do not know an answer, select the response you think is most likely to be correct. Resist the urge to answer by guessing.</li>
-                                    <li>This assessment contains  <span style="font-weight:bold">20 questions.</span> This is a timed assessment, and you will have  <span style="font-weight:bold">10 minutes</span> to complete this assessment.</li>
-                                    <li>You are permitted to skip items, but skipped items will be scored as <span style="font-weight:bold">incorrect.</span> You will <span style="font-weight:bold">not </span>have an apportunity to review questions at the end of this test.</li>
-                                    <li>If you lose your internet connection, this test will restart where you left off.</li>
-                            </ol>
-                          </div>
-                          <div>It is important to note that some of the tables within this testes are
-                          interactive. This means that you will need to scroll left/right or select the Heading tabs at the top of the table to toggle between screens of information.
-
-                          </div>
-                          <div class="Instruction-last"><p>
-                          An example of an interactive table is presented below. Information required to answer the questions will be included on both the “Customer Interaction Info.” tab and the “Interaction Codes” tab. You may toggle between screens by swiping left/right or by clicking on the heading tabs for the screen you wish to review.
-                          </p></div>
-
-                </div>
-
+   Question page VIEW
+    **************** -->
+<div ng-controller="questionController as ques" class="ceb-background">
+   <div id="sticky-anchor"></div>
+   <div id="sticky" ng-show="check && count!=21 && !timercheck">
+      <div class="timer-bar">
+         <uib-progressbar value="ques.percent">
+            <span class="sr-only">{{ques.percent}}</span>
+         </uib-progressbar>
+      </div>
+      <!--  timer -->
+      <table class="time">
+         <tr>
+            <td></td>
+            <td class="fix"> <span class="timer-pos" ><img src="/images/timerClock.png" alt="Clock icon"> {{ques.display}}</span></td>
+            <td></td>
+         </tr>
+      </table>
+   </div>
+   <div ng-show="!InstructionPage || InstructionPage1">
+      <div class="container instructions">
+         <div class="row">
+            <div class="width-500 info-box">
+               <div class="info-bar">
+                  <p class="info-title">Assessment</p>
+               </div>
+               <div class="info-box-content-wrap">
+                  <h4>You are about to complete an assessment </h4>
+                  <p class="heading"> Assessment: </p>
+                  <p>Working with information</p>
+                  <p class="heading">Time Limit:</p>
+                  <p>You have <strong>10 minutes</strong> to complete this test.</p>
+                  <p class="heading"> Additional Information</p>
+                  <p>If you lose your connection, this test will restart where you left off. 
+                     You will not have an opportunity to review all questions at the end of this test.
+                  </p>
+               </div>
             </div>
-
-        </div>
- </div>
-
-
-
-    <div class="instructions-wrapper" >
-        <div class="container instructions">
-            <div class="row">
-                <div class="width-500" ng-if="ques.test.set == 0" ng-show="check && count!=21 && !timercheck ">
-                    <h1 class="section-heading instruction">INFORMATION</h1>
-                    <div class="btn-group-container">
-                        <div class="instruction-heading">Coding Customer Transactions</div>
-                        <p>
-                            When coding customer transactions <strong>always</strong> begin with the type of account, followed by dollar amount withdrawal and deposit codes.
-                        </p>
-                        <p>
-                            There are two types of accounts:
-                            <strong>PAS</strong> and <strong>GLD</strong>.
-                        </p>
-                    </div>
-                    <div>
-                        <table class="table ceb-table">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>Code</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>For a withdrawal</td>
-                                    <td>W</td>
-                                </tr>
-                                <tr>
-                                    <td>For a deposit</td>
-                                    <td>A</td>
-                                </tr>
-                                <tr>
-                                    <td>PAS withdraws more than $1,500</td>
-                                    <td>G</td>
-                                </tr>
-                                <tr>
-                                    <td>GLD withdraws more than $2,500</td>
-                                    <td>H</td>
-                                </tr>
-                                <tr>
-                                    <td>PAS deposits more than $500 </td>
-                                    <td>D</td>
-                                </tr>
-                                <tr>
-                                    <td>GLD deposits more than $1,000</td>
-                                    <td>S</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-           
-<div class="width-500 type3"  ng-show="!check && count!=21 && !timercheck || InstructionPage1" >
-                    <h1 class="section-heading instruction">INFORMATION</h1>
-                    <div class="btn-group-container">
-                        <div class="btn-group btn-group-justified">
-                            <a href="#" class="btn btn-tab" ng-class="{'active': ques.tab}" ng-click="ques.tab = true">Customer Interaction Info.</a>
-                            <a href="#" class="btn  btn-tab" ng-class="{'active': !ques.tab}" ng-click="ques.tab = false">Interaction Codes</a>
-                        </div>
-                    </div>
-                    <div ng-if="ques.tab">
-                        <table class="table ceb-table">
-                            <tbody>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Mary S. Stevens</td>
-                                </tr>
-                                <tr>
-                                    <td>Address</td>
-                                    <td>16 E. Pine Avenue</td>
-                                </tr>
-                                <tr>
-                                    <td>Last Updated</td>
-                                    <td>07/21/2007</td>
-                                </tr>
-                                <tr>
-                                    <td>Account No.</td>
-                                    <td>1225637</td>
-                                </tr>
-                                <tr>
-                                    <td>Telephone</td>
-                                    <td>(310) 645-7878</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table class="table ceb-table">
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Interaction</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>01/20/2007 Jan</td>
-                                    <td>CO, AB, 82</td>
-                                </tr>
-                                <tr>
-                                    <td>03/02/2007 Mar</td>
-                                    <td>LT, AR, 23</td>
-                                </tr>
-                                <tr>
-                                    <td>03/17/2007 Mar</td>
-                                    <td>CO, LY, PD, 93</td>
-                                </tr>
-                                <tr>
-                                    <td>05/01/2007 May</td>
-                                    <td>CO, AB, LY, 76, 93
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>05/22/2007 May</td>
-                                    <td>LT, AR, 45</td>
-                                </tr>
-                                <tr>
-                                    <td>06/19/2007 June</td>
-                                    <td>CO, PD, 82</td>
-                                </tr>
-                                <tr>
-                                    <td>07/21/2007 July</td>
-                                    <td>CO, AB, CA</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div ng-if="!ques.tab">
-                        <table class="table ceb-table">
-                            <tbody>
-                                <tr>
-                                    <td>LY </td>
-                                    <td>Late payment dispute</td>
-                                </tr>
-                                <tr>
-                                    <td>AB</td>
-                                    <td>Account balance inquiry  </td>
-                                </tr>
-                                <tr>
-                                    <td>LT</td>
-                                    <td>Send late payment notice</td>
-                                </tr>
-                                <tr>
-                                    <td>CA</td>
-                                    <td>Account closing</td>
-                                </tr>
-                                <tr>
-                                    <td>CO</td>
-                                    <td>Customer initiated call</td>
-                                </tr>
-                                <tr>
-                                    <td>PD</td>
-                                    <td>Customer will make payment in 5 days</td>
-                                </tr>
-                                <tr>
-                                    <td>AR </td>
-                                    <td>
-                                        Account past due courtesy call
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>23</td>
-                                    <td>Unanswered telephone call </td>
-                                </tr>
-                                <tr>
-                                    <td>45</td>
-                                    <td>Telephone number does not exist </td>
-                                </tr>
-                                <tr>
-                                    <td>76</td>
-                                    <td>Customer change of address </td>
-                                </tr>
-                                <tr>
-                                    <td>82</td>
-                                    <td>Sales call</td>
-                                </tr>
-                                <tr>
-                                    <td>93</td>
-                                    <td>Customer requested supervisor</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    </div>
-
-                <div class="width-500" ng-if="ques.test.set == 1" ng-show="check && count!=21 && !timercheck || InstructionPage1">
-                    <h1 class="section-heading instruction">INFORMATION</h1>
-                    <div class="btn-group-container">
-                        <div class="instruction-heading">Coding Commercial Accounts</div>
-                    </div>
-                    <div>
-                        <table class="table ceb-table">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>Silver</th>
-                                    <th>Gold</th>
-                                    <th>Platinum</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Account</td>
-                                    <td>SA</td>
-                                    <td>GA</td>
-                                    <td>PA</td>
-                                </tr>
-                                <tr>
-                                    <td>Credit Limit</td>
-                                    <td>CL-10</td>
-                                    <td>CL-25</td>
-                                    <td>CL-50</td>
-                                </tr>
-                                <tr>
-                                    <td>Overdraft Fee</td>
-                                    <td>OD-25</td>
-                                    <td>OD-50</td>
-                                    <td>OD-75</td>
-                                </tr>
-                                <tr>
-                                    <td>Insurance</td>
-                                    <td>DL</td>
-                                    <td>DLP</td>
-                                    <td>DLPJ</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="btn-group-container">
-                        <p>
-                            Note: Codes are always listed first by account, then credit limit, overdraft, and insurance.
-                        </p>
-                    </div>
-                </div>
-          
-                <div class="width-500 type3"  ng-if="ques.test.set == 2" ng-show="check && count!=21 && !timercheck">
-                    <h1 class="section-heading instruction">INFORMATION</h1>
-                    <div class="btn-group-container">
-                        <div class="btn-group btn-group-justified">
-                            <a href="#" class="btn btn-tab" ng-class="{'active': ques.tab}" ng-click="ques.tab = true">Customer Interaction Info.</a>
-                            <a href="#" class="btn  btn-tab" ng-class="{'active': !ques.tab}" ng-click="ques.tab = false">Interaction Codes</a>
-                        </div>
-                    </div>
-                    <div ng-if="ques.tab">
-                        <table class="table ceb-table">
-                            <tbody>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Mary S. Stevens</td>
-                                </tr>
-                                <tr>
-                                    <td>Address</td>
-                                    <td>16 E. Pine Avenue</td>
-                                </tr>
-                                <tr>
-                                    <td>Last Updated</td>
-                                    <td>02/07/2007</td>
-                                </tr>
-                                <tr>
-                                    <td>Account No.</td>
-                                    <td>1225637</td>
-                                </tr>
-                                <tr>
-                                    <td>Telephone</td>
-                                    <td>(310) 645-7878</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table class="table ceb-table">
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Interaction</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>01/20/2007 Jan</td>
-                                    <td>CO, AB, 82</td>
-                                </tr>
-                                <tr>
-                                    <td>03/02/2007 Mar</td>
-                                    <td>LT, AR, 23</td>
-                                </tr>
-                                <tr>
-                                    <td>03/17/2007 Mar</td>
-                                    <td>CO, LY, PD, 93</td>
-                                </tr>
-                                <tr>
-                                    <td>05/01/2007 May</td>
-                                    <td>CO, AB, LY, 76, 93
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>05/22/2007 May</td>
-                                    <td>LT, AR, 45</td>
-                                </tr>
-                                <tr>
-                                    <td>06/19/2007 June</td>
-                                    <td>CO, PD, 82</td>
-                                </tr>
-                                <tr>
-                                    <td>07/21/2007 July</td>
-                                    <td>CO, AB, CA</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div ng-if="!ques.tab">
-                        <table class="table ceb-table">
-                            <tbody>
-                                <tr>
-                                    <td>LY </td>
-                                    <td>Late payment dispute</td>
-                                </tr>
-                                <tr>
-                                    <td>AB</td>
-                                    <td>Account balance inquiry  </td>
-                                </tr>
-                                <tr>
-                                    <td>LT</td>
-                                    <td>Send late payment notice</td>
-                                </tr>
-                                <tr>
-                                    <td>CA</td>
-                                    <td>Account closing</td>
-                                </tr>
-                                <tr>
-                                    <td>CO</td>
-                                    <td>Customer initiated call</td>
-                                </tr>
-                                <tr>
-                                    <td>PD</td>
-                                    <td>Customer will make payment in 5 days</td>
-                                </tr>
-                                <tr>
-                                    <td>AR </td>
-                                    <td>
-                                        Account past due courtesy call
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>23</td>
-                                    <td>Unanswered telephone call </td>
-                                </tr>
-                                <tr>
-                                    <td>45</td>
-                                    <td>Telephone number does not exist </td>
-                                </tr>
-                                <tr>
-                                    <td>76</td>
-                                    <td>Customer change of address </td>
-                                </tr>
-                                <tr>
-                                    <td>82</td>
-                                    <td>Sales call</td>
-                                </tr>
-                                <tr>
-                                    <td>93</td>
-                                    <td>Customer requested supervisor</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-         
-                <div class="width-500 type4" ng-if="ques.test.set == 3" ng-show="check && count!=21 && !timercheck">
-                    <h1 class="section-heading instruction">INFORMATION</h1>
-                    <div class="btn-group-container">
-                        <div class="btn-group btn-group-justified">
-                            <a href="#" class="btn btn-tab" ng-class="{'active': ques.tab}" ng-click="ques.tab = true">Retail Promotion Inquiry</a>
-                            <a href="#" class="btn  btn-tab" ng-class="{'active': !ques.tab}" ng-click="ques.tab = false">Past Transactions</a>
-                        </div>
-                    </div>
-                    <div ng-if="ques.tab">
-                        <table class="table ceb-table">
-                            <tbody>
-                                <tr>
-                                    <td>Discount Starting Date</td>
-                                    <td>06/01/2007</td>
-                                </tr>
-                                <tr>
-                                    <td>Cash-Back Bonus Starting Date</td>
-                                    <td>06/01/2007</td>
-                                </tr>
-                                <tr>
-                                    <td>Today’s Date</td>
-                                    <td>07/21/2007</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table class="table ceb-table">
-                            <thead>
-                                <tr>
-                                    <th colspan="2">Terms for Retailer Discount</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Length of program</td>
-                                    <td>60 days</td>
-                                </tr>
-                                <tr>
-                                    <td>Minimum required purchase</td>
-                                    <td>$200.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Retail discount rate</td>
-                                    <td>0.05%</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table class="table ceb-table">
-                            <thead>
-                                <tr>
-                                    <th colspan="2">Terms for Retailer Cash-Back Bonus</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Length of program</td>
-                                    <td>60 days</td>
-                                </tr>
-                                <tr>
-                                    <td>Minimum required purchase</td>
-                                    <td>$100.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Retail discount rate</td>
-                                    <td>0.03%</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div ng-if="!ques.tab">
-                        <table class="table ceb-table">
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Amount</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>12 May 07</td>
-                                    <td>$310.12</td>
-                                </tr>
-                                <tr>
-                                    <td>9 Jun 07</td>
-                                    <td>$278.45</td>
-                                </tr>
-                                <tr>
-                                    <td>22 Jun 07</td>
-                                    <td>$55.75</td>
-                                </tr>
-                                <tr>
-                                    <td>3 Jul 07</td>
-                                    <td>$98.15</td>
-                                </tr>
-                                <tr>
-                                    <td>10 Jul 07</td>
-                                    <td>$115.35</td>
-                                </tr>
-                                <tr>
-                                    <td>20 Jul 07</td>
-                                    <td>$34.25</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+            <div class="width-500 info-box">
+               <div class="info-bar">
+                  <p class="info-title">Working with Information</p>
+               </div>
+               <div class="info-box-content-wrap">
+                  <ol>
+                     <li>The following is an evaluation of how workers process information.</li>
+                     <li>You will be given information in the form of simulated computer screens or sets of instructions.</li>
+                     <li>You will use the information provided to answer related questions.</li>
+                     <li>Each question has five possible choices. Please choose the one correct option to each question.</li>
+                     <li>Work quickly, but do not rush. If you do not know an answer, select the responce you think is most likely to be correct. Resist the urge to answer by guessing.</li>
+                     <li>This assessment contains <strong>20 questions.</strong> This is a timed assessment, and you will have <strong>10 minutes</strong> to complete this assessment.</li>
+                     <li>You are permitted to skip items, but skipped items will be scored as <strong>incorrect.</strong> You will <strong>not</strong> have an apportunity to review questions at the end of this test.</li>
+                     <li>If you lose your internet connection, this test will restart where you left off.</li>
+                  </ol>
+                  <p>It is importantto notethat someof the tableswithin this testes are
+                     interactive. This means that you will need to scroll left/right or select the Heading tabs at the top of the table to toggle between screens of information.
+                  </p>
+                  <p>
+                     An example of an interactive table is presented below. Information required to answer the questions will be included on both the “Customer Interaction Info.” tab and the “Interaction Codes” tab. You may toggle between screens by swiping left/right or by clicking on the heading tabs for the screen you wish to review.
+                  </p>
+               </div>
             </div>
-        </div>
-        <!-- container -->
-    </div> 
-
-    <div class="white-div1" ng-show="!check && !InstructionPage || InstructionPage1"> 
-        <div class="container questions1">
-            <div class="row">
-                <div class="width-500">
-                       <div class="instruction-msg">
-                        Click “Start Sample Question” to be taken to a sample question to help get you more familiar with the format before starting.
-                       </div>
-                       <div class="col-xs-12">
-                            <button class="btn btn-ceb" ng-click="startInstruction()">START EXAMPLE QUESTION</button>
-                        </div>
-
-                  </div>      
+         </div>
+      </div>
+   </div>
+   <div class="instructions-wrapper" >
+      <div class="container instructions">
+         <div class="row">
+            <div class="width-500" ng-if="ques.test.set == 0" ng-show="check && count!=21 && !timercheck ">
+               <h1 class="section-heading instruction">INFORMATION</h1>
+               <div class="btn-group-container">
+                  <div class="instruction-heading">Coding Customer Transactions</div>
+                  <p>
+                     When coding customer transactions <strong>always</strong> begin with the type of account, followed by dollar amount and withdrawal or deposit codes.
+                  </p>
+                  <p>
+                     There are two types of accounts:
+                     <strong>PAS</strong> and <strong>GLD</strong>.
+                  </p>
+               </div>
+               <div>
+                  <table class="table ceb-table">
+                     <thead>
+                        <tr>
+                           <th></th>
+                           <th>Code</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>For a withdrawal</td>
+                           <td>W</td>
+                        </tr>
+                        <tr>
+                           <td>For a deposit</td>
+                           <td>A</td>
+                        </tr>
+                        <tr>
+                           <td>PAS withdraws more than $1,500</td>
+                           <td>G</td>
+                        </tr>
+                        <tr>
+                           <td>GLD withdraws more than $2,500</td>
+                           <td>H</td>
+                        </tr>
+                        <tr>
+                           <td>PAS deposits more than $500 </td>
+                           <td>D</td>
+                        </tr>
+                        <tr>
+                           <td>GLD deposits more than $1,000</td>
+                           <td>S</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
             </div>
-        </div>
-    </div>
-
- <div class="white-div1" ng-show="!check && InstructionPage && !InstructionPage1">
-        <div class="container questions1">
-            <div class="row">
-                <div class="width-500">
-                       
-
-                    <div class="question-heading-group">
-                        <h1 class="section-heading question">QUESTION</h1>
-                        <p class="ceb-question">{{samplequestion}}</p>
-                    </div>
-                    <div class="row">
-                        <div class="options-margin" ng-repeat="option in sampleoption">
-                            <div class="ceb-options" ng-class="{'active': ques.answer == option.option}" ng-click="ques.answer = option.option">
-                               
-                                <span class="option-text">{{option.option}} </span>
-                                <input class="pull-right" type="radio" name="optradio" ng-model="ques.answer" ng-value="option.option">
-                                <label>
-                                </label>
-                            </div>
-
-
-                        </div>
-                         <div class="output1" ng-show="ques.answer==null">   <hr>
-                        Study the information above and select an answer to the sample question.
-                        </div>
-                        <div class="output2" ng-show="ques.answer==3"><hr>You have chosen the correct answer.
-                            <hr>
-                            <div>Click the Start Evaluation Button to begin the assessment. </div>   
-
-
-
-                        </div>
-                       <div class="output3" ng-show="ques.answer!=3 && ques.answer!=null">
-                            <hr>
-                          You have chosen an incorrect answer.
-                         <div>The correct answer to Sample Question 2 is</div><div class="right-option">3.</div>  <hr>
-                          <div>Click the Start Evaluation Button to begin the assessment. </div> 
-                       </div>
-
-                        <div class="col-xs-6 options-margin" ng-hide="ques.answer==null">
-                        <button class="btn btn-ceb1" ng-click='exitAssessment()'>EXIT NOW</button>
-                           
-                        </div>
-                        <div class="col-xs-6 options-margin" ng-hide="ques.answer==null">
-                        
-                            <button class="btn btn-ceb" ng-click='startEvaluation()'>START EVALUATION</button>
-                        </div> 
-                    </div>
-                </div>
+            <div class="width-500 type3"  ng-show="!check && count!=21 && !timercheck || InstructionPage1" >
+               <h1 class="section-heading instruction">INFORMATION</h1>
+               <div class="btn-group-container">
+                  <div class="btn-group btn-group-justified">
+                     <a href="#" class="btn btn-tab" ng-class="{'active': ques.tab}" ng-click="ques.tab = true">Customer Interaction Info.</a>
+                     <a href="#" class="btn  btn-tab" ng-class="{'active': !ques.tab}" ng-click="ques.tab = false">Interaction Codes</a>
+                  </div>
+               </div>
+               <div ng-if="ques.tab">
+                  <table class="table ceb-table">
+                     <tbody>
+                        <tr>
+                           <td>Name</td>
+                           <td>Mary S. Stevens</td>
+                        </tr>
+                        <tr>
+                           <td>Address</td>
+                           <td>16 E. Pine Avenue</td>
+                        </tr>
+                        <tr>
+                           <td>Last Updated</td>
+                           <td>07/21/2007</td>
+                        </tr>
+                        <tr>
+                           <td>Account No.</td>
+                           <td>1225637</td>
+                        </tr>
+                        <tr>
+                           <td>Telephone</td>
+                           <td>(310) 645-7878</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <table class="table ceb-table">
+                     <thead>
+                        <tr>
+                           <th>Date</th>
+                           <th>Interaction</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>01/20/2007 Jan</td>
+                           <td>CO, AB, 82</td>
+                        </tr>
+                        <tr>
+                           <td>03/02/2007 Mar</td>
+                           <td>LT, AR, 23</td>
+                        </tr>
+                        <tr>
+                           <td>03/17/2007 Mar</td>
+                           <td>CO, LY, PD, 93</td>
+                        </tr>
+                        <tr>
+                           <td>05/01/2007 May</td>
+                           <td>CO, AB, LY, 76, 93
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>05/22/2007 May</td>
+                           <td>LT, AR, 45</td>
+                        </tr>
+                        <tr>
+                           <td>06/19/2007 June</td>
+                           <td>CO, PD, 82</td>
+                        </tr>
+                        <tr>
+                           <td>07/21/2007 July</td>
+                           <td>CO, AB, CA</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <div ng-if="!ques.tab">
+                  <table class="table ceb-table">
+                     <tbody>
+                        <tr>
+                           <td>LY </td>
+                           <td>Late payment dispute</td>
+                        </tr>
+                        <tr>
+                           <td>AB</td>
+                           <td>Account balance inquiry  </td>
+                        </tr>
+                        <tr>
+                           <td>LT</td>
+                           <td>Send late payment notice</td>
+                        </tr>
+                        <tr>
+                           <td>CA</td>
+                           <td>Account closing</td>
+                        </tr>
+                        <tr>
+                           <td>CO</td>
+                           <td>Customer initiated call</td>
+                        </tr>
+                        <tr>
+                           <td>PD</td>
+                           <td>Customer will make payment in 5 days</td>
+                        </tr>
+                        <tr>
+                           <td>AR </td>
+                           <td>
+                              Account past due courtesy call
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>23</td>
+                           <td>Unanswered telephone call </td>
+                        </tr>
+                        <tr>
+                           <td>45</td>
+                           <td>Telephone number does not exist </td>
+                        </tr>
+                        <tr>
+                           <td>76</td>
+                           <td>Customer change of address </td>
+                        </tr>
+                        <tr>
+                           <td>82</td>
+                           <td>Sales call</td>
+                        </tr>
+                        <tr>
+                           <td>93</td>
+                           <td>Customer requested supervisor</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
             </div>
-        </div>
-    </div>
-
-
-
-    <div class="white-div"  ng-show="check && count!=21 && !timercheck">
-        <div class="container questions">
-            <div class="row">
-                <div class="width-500">
-                        
-
-                    <div class="question-heading-group">
-                        <h1 class="section-heading question">QUESTION</h1>
-                        <p class="ceb-question">{{ques.test.currentQuestion.question}}</p>
-                    </div>
-                    <div class="row">
-                        <div class="options-margin" ng-repeat="option in ques.test.currentQuestion.options">
-                            <div class="ceb-options" ng-class="{'active': ques.answer == option.option}" ng-click="ques.answer = option.option">
-                                <span class="sr-only">Option {{$index+1}} {{option.option}}</span>
-                                <span class="option-text">{{option.option}}</span>
-                                <input class="pull-right" type="radio" name="optradio" ng-model="ques.answer" ng-value="option.option">
-                                <label>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 options-margin">
-                            <button class="btn btn-ceb" ng-click="ques.showNextQuestion()">NEXT</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="width-500" ng-if="ques.test.set == 1" ng-show="check && count!=21 && !timercheck || InstructionPage1">
+               <h1 class="section-heading instruction">INFORMATION</h1>
+               <div class="btn-group-container">
+                  <div class="instruction-heading">Coding Commercial Accounts</div>
+               </div>
+               <div>
+                  <table class="table ceb-table">
+                     <thead>
+                        <tr>
+                           <th></th>
+                           <th>Silver</th>
+                           <th>Gold</th>
+                           <th>Platinum</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>Account</td>
+                           <td>SA</td>
+                           <td>GA</td>
+                           <td>PA</td>
+                        </tr>
+                        <tr>
+                           <td>Credit Limit</td>
+                           <td>CL-10</td>
+                           <td>CL-25</td>
+                           <td>CL-50</td>
+                        </tr>
+                        <tr>
+                           <td>Overdraft Fee</td>
+                           <td>OD-25</td>
+                           <td>OD-50</td>
+                           <td>OD-75</td>
+                        </tr>
+                        <tr>
+                           <td>Insurance</td>
+                           <td>DL</td>
+                           <td>DLP</td>
+                           <td>DLPJ</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <div class="btn-group-container">
+                  <p>
+                     Note: Codes are always listed first by account, then credit limit, overdraft, and insurance.
+                  </p>
+               </div>
             </div>
-        </div>
-    </div>
-
-<div class="white-div"  ng-show="check && count==21 && InstructionPage && !InstructionPage1" >
-        <div class="container questions">
-            <div class="row">
-                <div class="width-500">
-                        
-
-                    <div class="question-heading-group">
-                        <h4 class="assessment-complete">Assessment Complete.</h4>
-                        <p class="thank-you-for-comple">Thank you for completing this assessement.</p>
-                      
-                        <a class="combined-shape"><img src="/images/combined-shape.png" alt="Exit icon" align="middle"> </a>
-                    </div>
-                    <div class="row">
-                        
-                        <div class="col-xs-12 options-margin">
-                            <button class="btn btn-ceb" ng-click='exitAssessment()'>EXIT ASSESSMENT</button>    
-                        </div>
-                    </div>
-                </div>
+            <div class="width-500 type3"  ng-if="ques.test.set == 2" ng-show="check && count!=21 && !timercheck">
+               <h1 class="section-heading instruction">INFORMATION</h1>
+               <div class="btn-group-container">
+                  <div class="btn-group btn-group-justified">
+                     <a href="#" class="btn btn-tab" ng-class="{'active': ques.tab}" ng-click="ques.tab = true">Customer Interaction Info.</a>
+                     <a href="#" class="btn  btn-tab" ng-class="{'active': !ques.tab}" ng-click="ques.tab = false">Interaction Codes</a>
+                  </div>
+               </div>
+               <div ng-if="ques.tab">
+                  <table class="table ceb-table">
+                     <tbody>
+                        <tr>
+                           <td>Name</td>
+                           <td>Mary S. Stevens</td>
+                        </tr>
+                        <tr>
+                           <td>Address</td>
+                           <td>16 E. Pine Avenue</td>
+                        </tr>
+                        <tr>
+                           <td>Last Updated</td>
+                           <td>21/07/2007</td>
+                        </tr>
+                        <tr>
+                           <td>Account No.</td>
+                           <td>1225637</td>
+                        </tr>
+                        <tr>
+                           <td>Telephone</td>
+                           <td>(310) 645-7878</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <table class="table ceb-table">
+                     <thead>
+                        <tr>
+                           <th>Date</th>
+                           <th>Interaction</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>01/20/2007 Jan</td>
+                           <td>CO, AB, 82</td>
+                        </tr>
+                        <tr>
+                           <td>03/02/2007 Mar</td>
+                           <td>LT, AR, 23</td>
+                        </tr>
+                        <tr>
+                           <td>03/17/2007 Mar</td>
+                           <td>CO, LY, PD, 93</td>
+                        </tr>
+                        <tr>
+                           <td>05/01/2007 May</td>
+                           <td>CO, AB, LY, 76, 93
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>05/22/2007 May</td>
+                           <td>LT, AR, 45</td>
+                        </tr>
+                        <tr>
+                           <td>06/19/2007 June</td>
+                           <td>CO, PD, 82</td>
+                        </tr>
+                        <tr>
+                           <td>07/21/2007 July</td>
+                           <td>CO, AB, CA</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <div ng-if="!ques.tab">
+                  <table class="table ceb-table">
+                     <tbody>
+                        <tr>
+                           <td>LY </td>
+                           <td>Late payment dispute</td>
+                        </tr>
+                        <tr>
+                           <td>AB</td>
+                           <td>Account balance inquiry  </td>
+                        </tr>
+                        <tr>
+                           <td>LT</td>
+                           <td>Send late payment notice</td>
+                        </tr>
+                        <tr>
+                           <td>CA</td>
+                           <td>Account closing</td>
+                        </tr>
+                        <tr>
+                           <td>CO</td>
+                           <td>Customer initiated call</td>
+                        </tr>
+                        <tr>
+                           <td>PD</td>
+                           <td>Customer will make payment in 5 days</td>
+                        </tr>
+                        <tr>
+                           <td>AR </td>
+                           <td>
+                              Account past due courtesy call
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>23</td>
+                           <td>Unanswered telephone call </td>
+                        </tr>
+                        <tr>
+                           <td>45</td>
+                           <td>Telephone number does not exist </td>
+                        </tr>
+                        <tr>
+                           <td>76</td>
+                           <td>Customer change of address </td>
+                        </tr>
+                        <tr>
+                           <td>82</td>
+                           <td>Sales call</td>
+                        </tr>
+                        <tr>
+                           <td>93</td>
+                           <td>Customer requested supervisor</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
             </div>
-        </div>
-    </div>
-
-    <div class="white-div"  ng-show="check && count!=21 &&  timercheck && InstructionPage && !InstructionPage1">
-        <div class="container questions">
-            <div class="row">
-                <div class="width-500">
-                        
-
-                    <div class="question-heading-group">
-                        
-                        <h4 class="assessment-complete">Time Out.</h4>
-                        <p class="thank-you-for-comple">Thank you for completing this assessement.</p>
-                      
-                        <a class="combined-shape"><img src="/images/combined-shape.png" alt="Exit icon" align="middle" > </a>
-
-                    </div>
-                    <div class="row">
-                        
-                        <div class="col-xs-12 options-margin">
-                            <button class="btn btn-ceb" ng-click='exitAssessment()'>EXIT ASSESSMENT</button>    
-                        </div>
-                    </div>
-                </div>
+            <div class="width-500 type4" ng-if="ques.test.set == 3" ng-show="check && count!=21 && !timercheck">
+               <h1 class="section-heading instruction">INFORMATION</h1>
+               <div class="btn-group-container">
+                  <div class="btn-group btn-group-justified">
+                     <a href="#" class="btn btn-tab" ng-class="{'active': ques.tab}" ng-click="ques.tab = true">Retail Promotion Inquiry</a>
+                     <a href="#" class="btn  btn-tab" ng-class="{'active': !ques.tab}" ng-click="ques.tab = false">Past Transactions</a>
+                  </div>
+               </div>
+               <div ng-if="ques.tab">
+                  <table class="table ceb-table">
+                     <tbody>
+                        <tr>
+                           <td>Discount Starting Date</td>
+                           <td>06/01/2007</td>
+                        </tr>
+                        <tr>
+                           <td>Cash-Back Bonus Starting Date</td>
+                           <td>06/01/2007</td>
+                        </tr>
+                        <tr>
+                           <td>Today’s Date</td>
+                           <td>21/07/2007</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <table class="table ceb-table">
+                     <thead>
+                        <tr>
+                           <th colspan="2">Terms for Retailer Discount</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>Length of program</td>
+                           <td>60 days</td>
+                        </tr>
+                        <tr>
+                           <td>Minimum required purchase</td>
+                           <td>$200.00</td>
+                        </tr>
+                        <tr>
+                           <td>Retail discount rate</td>
+                           <td>0.05%</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <table class="table ceb-table">
+                     <thead>
+                        <tr>
+                           <th colspan="2">Terms for Retailer Cash-Back Bonus</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>Length of program</td>
+                           <td>60 days</td>
+                        </tr>
+                        <tr>
+                           <td>Minimum required purchase</td>
+                           <td>$100.00</td>
+                        </tr>
+                        <tr>
+                           <td>Retail discount rate</td>
+                           <td>0.03%</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <div ng-if="!ques.tab">
+                  <table class="table ceb-table">
+                     <thead>
+                        <tr>
+                           <th>Date</th>
+                           <th>Amount</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>12 May 07</td>
+                           <td>$310.12</td>
+                        </tr>
+                        <tr>
+                           <td>9 Jun 07</td>
+                           <td>$278.45</td>
+                        </tr>
+                        <tr>
+                           <td>22 Jun 07</td>
+                           <td>$55.75</td>
+                        </tr>
+                        <tr>
+                           <td>3 Jul 07</td>
+                           <td>$98.15</td>
+                        </tr>
+                        <tr>
+                           <td>10 Jul 07</td>
+                           <td>$115.35</td>
+                        </tr>
+                        <tr>
+                           <td>20 Jul 07</td>
+                           <td>$34.25</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
             </div>
-        </div>
-    </div>
-    <!-- bottom-div -->
-    <div class="ceb-question-progressbar" ng-show="check && count!=21 && !timercheck"> 
-        <div class="container">
-            <div class="row">
-                <div class="width-500"> <span class="ceb-question-status pull-right">{{ques.currentQuestionNum}} of {{ques.test.totalQuestions}}</span>
-                    <span class="ceb-progress-dot completed"></span>
-                    <span class="ceb-progress-dot completed"></span>
-                    <span class="ceb-progress-dot margin-left-10 pull-right"></span>
-                    <uib-progressbar class="progress-striped" value="ques.questionProgressPercent" type="success"></uib-progressbar>
-                </div>
+         </div>
+      </div>
+      <!-- container -->
+   </div>
+   <div ng-show="!check && !InstructionPage || InstructionPage1">
+      <div class="container questions1">
+         <div class="row">
+            <div class="width-500 info-box">
+               <div class="info-bar">
+                  <p class="info-title">start</p>
+               </div>
+               <div class="info-box-content-wrap">
+                  <p>
+                     Click “Start Sample Question” to be taken to a sample question to help get you more familiar with the format before starting.
+                  </p>
+                  <div class="col-xs-14 options-margin">
+                     <button class="btn btn-ceb" ng-click="startInstruction()">START EXAMPLE QUESTION</button>
+                  </div>
+               </div>
             </div>
-        </div>
-    </div>
+         </div>
+      </div>
+   </div>
+   <div class="white-div" ng-show="!check && InstructionPage && !InstructionPage1">
+      <div class="container questions1">
+         <div class="row">
+            <div class="width-500">
+               <div class="question-heading-group">
+                  <h1 class="section-heading question">QUESTION</h1>
+                  <p class="ceb-question">{{samplequestion}}</p>
+               </div>
+               <div class="row">
+                  <div class="options-margin" ng-repeat="option in sampleoption">
+                     <div class="ceb-options" ng-class="{'active': ques.answer == option.option}" ng-click="ques.answer = option.option">
+                        <span class="option-text">{{option.option}} </span>
+                        <input class="pull-right" type="radio" name="optradio" ng-model="ques.answer" ng-value="option.option">
+                        <label>
+                        </label>
+                     </div>
+                  </div>
+                  <div class="output1" ng-show="ques.answer==null">
+                     <hr>
+                     Study the information above and select an answer to the sample question.
+                  </div>
+                  <div class="output2" ng-show="ques.answer==3">
+                     <hr>
+                     You have chosen the correct answer.
+                     <hr>
+                     <div>Click the Start Evaluation Button to begin the assessment. </div>
+                  </div>
+                  <div class="output3" ng-show="ques.answer!=3 && ques.answer!=null">
+                     <hr>
+                     You have chosen an incorrect answer.
+                     <div>The correct answer to Sample Question 2 is</div>
+                     <div class="right-option">3.</div>
+                     <hr>
+                     <div>Click the Start Evaluation Button to begin the assessment. </div>
+                  </div>
+                  <div class="col-xs-6 options-margin" ng-hide="ques.answer==null">
+                     <button class="btn btn-ceb" ng-click='exitAssessment()'>EXIT NOW</button>
+                  </div>
+                  <div class="col-xs-6 options-margin" ng-hide="ques.answer==null">
+                     <button class="btn btn-ceb" ng-click='startEvaluation()'>START EVALUATION</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="white-div"  ng-show="check && count!=21 && !timercheck">
+      <div class="container questions">
+         <div class="row">
+            <div class="width-500">
+               <div class="question-heading-group">
+                  <h1 class="section-heading question">QUESTION</h1>
+                  <p class="ceb-question">{{ques.test.currentQuestion.question}}</p>
+               </div>
+               <div class="row">
+                  <div class="options-margin" ng-repeat="option in ques.test.currentQuestion.options">
+                     <div class="ceb-options" ng-class="{'active': ques.answer == option.option}" ng-click="ques.answer = option.option">
+                        <span class="sr-only">Option {{$index+1}} {{option.option}}</span>
+                        <span class="option-text">{{option.option}}</span>
+                        <input class="pull-right" type="radio" name="optradio" ng-model="ques.answer" ng-value="option.option">
+                        <label>
+                        </label>
+                     </div>
+                  </div>
+                  <div class="col-xs-12 options-margin">
+                     <button class="btn btn-ceb" ng-click="ques.showNextQuestion()">NEXT</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="full-screen"  ng-show="check && count==21 && InstructionPage && !InstructionPage1" >
+      <div class="container questions">
+         <div class="row">
+            <div class="width-500 info-box">
+               <div class="info-bar">
+                  <p class="info-title">Assessment Complete</p>
+               </div>
+               <div class="info-box-content-wrap exit-screen">
+                  <p class="exit-info">Thank you for completing this assessement.</p>
+                  <div class="tick-img">
+                     <img src="/images/combined-shape.png" alt="Exit icon" align="middle">
+                  </div>
+                  <div class="exit-button">
+                     <button class="btn btn-ceb" ng-click='exitAssessment()'>EXIT ASSESSMENT</button>  
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="full-screen"  ng-show="check && count!=21 &&  timercheck && InstructionPage && !InstructionPage1">
+      <div class="container questions">
+         <div class="row">
+            <div class="width-500 info-box">
+               <div class="info-bar">
+                  <p class="info-title">Time has run out</p>
+               </div>
+               <div class="info-box-content-wrap exit-screen">
+                  <p class="exit-info">Thank you for completing this assessement.</p>
+                  <div class="tick-img">
+                     <img src="/images/combined-shape.png" alt="Exit icon" align="middle">
+                  </div>
+                  <div class="exit-button">
+                     <button class="btn btn-ceb" ng-click='exitAssessment()'>EXIT ASSESSMENT</button>  
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- bottom-div -->
+   <div class="ceb-question-progressbar" ng-show="check && count!=21 && !timercheck">
+      <div class="container">
+         <div class="row">
+            <div class="width-500">
+               <span class="ceb-question-status pull-right">{{ques.currentQuestionNum}} of {{ques.test.totalQuestions}}</span>
+               <span class="ceb-progress-dot completed"></span>
+               <span class="ceb-progress-dot completed"></span>
+               <span ng-show="count==20" class="ceb-progress-dot completed margin-left-10 pull-right"></span>
+               <span class="ceb-progress-dot margin-left-10 pull-right"></span>
+               <uib-progressbar class="progress-striped" value="ques.questionProgressPercent" type="success"></uib-progressbar>
+            </div>
+         </div>
+      </div>
+   </div>
 </div>
 <!-- questions controller  -->

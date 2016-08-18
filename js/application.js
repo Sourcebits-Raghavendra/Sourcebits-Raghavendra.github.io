@@ -168,7 +168,7 @@ function endAssessment() {
             }
             vm.percent = (timer * 100) / duration;
             $scope.$apply();
-            console.log(  "timer" + vm.display);
+            
             if (--timer < 0) {
                 timer = duration;
             }
