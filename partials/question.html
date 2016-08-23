@@ -26,11 +26,11 @@
                   <p class="info-title">Assessment</p>
                </div>
                <div class="info-box-content-wrap">
-                  <h4>You are about to complete an assessment </h4>
+                  <h4 class="semiBold-font">You are about to complete an assessment </h4>
                   <p class="heading"> Assessment: </p>
                   <p>Working with information</p>
                   <p class="heading">Time Limit:</p>
-                  <p>You have <strong>10 minutes</strong> to complete this test.</p>
+                  <p>You have <span class="bold-font">10 minutes</span> to complete this test.</p>
                   <p class="heading"> Additional Information</p>
                   <p>If you lose your connection, this test will restart where you left off. 
                      You will not have an opportunity to review all questions at the end of this test.
@@ -48,8 +48,8 @@
                      <li>You will use the information provided to answer related questions.</li>
                      <li>Each question has five possible choices. Please choose the one correct option to each question.</li>
                      <li>Work quickly, but do not rush. If you do not know an answer, select the response you think is most likely to be correct. Resist the urge to answer by guessing.</li>
-                     <li>This assessment contains <strong>20 questions.</strong> This is a timed assessment, and you will have <strong>10 minutes</strong> to complete this assessment.</li>
-                     <li>You are permitted to skip items, but skipped items will be scored as <strong>incorrect.</strong> You will <strong>not</strong> have an apportunity to review questions at the end of this test.</li>
+                     <li>This assessment contains <span class="bold-font">20 questions.</span> This is a timed assessment, and you will have <span class="bold-font">10 minutes</span> to complete this assessment.</li>
+                     <li>You are permitted to skip items, but skipped items will be scored as <span class="bold-font">incorrect.</span> You will <span class="bold-font">not</span> have an apportunity to review questions at the end of this test.</li>
                      <li>If you lose your internet connection, this test will restart where you left off.</li>
                   </ol>
                   <p>It is important to note that some of the tables with in this testes are
@@ -63,7 +63,144 @@
          </div>
       </div>
    </div>
-   <div class="instructions-wrapper" >
+       <div class="" >
+            <div ng-show="!check && !InstructionPage || InstructionPage1">
+           
+               <div class="width-500 type3 table-100"  ng-show="!check && count!=21 && !timercheck" >
+               <h1 class="section-heading instruction">INFORMATION</h1>
+               <div class="btn-group-container">
+                  <div class="btn-group btn-group-justified">
+                     <a href="#" class="btn btn-tab" ng-class="{'active': ques.tab}" ng-click="ques.tab = true">Customer Interaction Info.</a>
+                     <a href="#" class="btn  btn-tab" ng-class="{'active': !ques.tab}" ng-click="ques.tab = false">Interaction Codes</a>
+                  </div>
+               </div>
+               <div ng-if="ques.tab">
+                  <table class="table ceb-table">
+                     <tbody>
+                        <tr>
+                           <td>Name</td>
+                           <td>Mary S. Stevens</td>
+                        </tr>
+                        <tr>
+                           <td>Address</td>
+                           <td>16 E. Pine Avenue</td>
+                        </tr>
+                        <tr>
+                           <td>Last Updated</td>
+                           <td>07/21/2007</td>
+                        </tr>
+                        <tr>
+                           <td>Account No.</td>
+                           <td>1225637</td>
+                        </tr>
+                        <tr>
+                           <td>Telephone</td>
+                           <td>(310) 645-7878</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <table class="table ceb-table">
+                     <thead>
+                        <tr>
+                           <th>Date</th>
+                           <th>Interaction</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>01/20/2007 Jan</td>
+                           <td>CO, AB, 82</td>
+                        </tr>
+                        <tr>
+                           <td>03/02/2007 Mar</td>
+                           <td>LT, AR, 23</td>
+                        </tr>
+                        <tr>
+                           <td>03/17/2007 Mar</td>
+                           <td>CO, LY, PD, 93</td>
+                        </tr>
+                        <tr>
+                           <td>05/01/2007 May</td>
+                           <td>CO, AB, LY, 76, 93
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>05/22/2007 May</td>
+                           <td>LT, AR, 45</td>
+                        </tr>
+                        <tr>
+                           <td>06/19/2007 June</td>
+                           <td>CO, PD, 82</td>
+                        </tr>
+                        <tr>
+                           <td>07/21/2007 July</td>
+                           <td>CO, AB, CA</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <div ng-if="!ques.tab">
+                  <table class="table ceb-table">
+                     <tbody>
+                        <tr>
+                           <td>LY </td>
+                           <td>Late payment dispute</td>
+                        </tr>
+                        <tr>
+                           <td>AB</td>
+                           <td>Account balance inquiry  </td>
+                        </tr>
+                        <tr>
+                           <td>LT</td>
+                           <td>Send late payment notice</td>
+                        </tr>
+                        <tr>
+                           <td>CA</td>
+                           <td>Account closing</td>
+                        </tr>
+                        <tr>
+                           <td>CO</td>
+                           <td>Customer initiated call</td>
+                        </tr>
+                        <tr>
+                           <td>PD</td>
+                           <td>Customer will make payment in 5 days</td>
+                        </tr>
+                        <tr>
+                           <td>AR </td>
+                           <td>
+                              Account past due courtesy call
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>23</td>
+                           <td>Unanswered telephone call </td>
+                        </tr>
+                        <tr>
+                           <td>45</td>
+                           <td>Telephone number does not exist </td>
+                        </tr>
+                        <tr>
+                           <td>76</td>
+                           <td>Customer change of address </td>
+                        </tr>
+                        <tr>
+                           <td>82</td>
+                           <td>Sales call</td>
+                        </tr>
+                        <tr>
+                           <td>93</td>
+                           <td>Customer requested supervisor</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+
+            </div>
+
+            </div>
+   <div class="instructions-wrapper" ng-hide="!check && !InstructionPage || InstructionPage1">
       <div class="container instructions">
          <div class="row">
             <div class="width-500" ng-if="ques.test.set == 0" ng-show="check && count!=21 && !timercheck ">
@@ -115,7 +252,8 @@
                   </table>
                </div>
             </div>
-            <div class="width-500 type3"  ng-show="!check && count!=21 && !timercheck || InstructionPage1" >
+
+            <div class="width-500 type3"  ng-show="!check && count!=21 && !timercheck" >
                <h1 class="section-heading instruction">INFORMATION</h1>
                <div class="btn-group-container">
                   <div class="btn-group btn-group-justified">
@@ -624,7 +762,7 @@
          </div>
       </div>
    </div>
-   <div class="full-screen"  ng-show="check && count==21 && InstructionPage && !InstructionPage1" >
+   <div class="full-screen exit-page"  ng-show="check && count==21 && InstructionPage && !InstructionPage1" >
       <div class="container questions">
          <div class="row">
             <div class="width-500 info-box">

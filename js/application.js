@@ -31,7 +31,7 @@ angular
 // TIMER DEMO
 
 
-function questionController($scope, $http, $log, $document,$state) {
+function questionController($scope, $http, $log, $document, $state) {
 
     var vm = this;
     vm.open = false;
@@ -46,7 +46,7 @@ function questionController($scope, $http, $log, $document,$state) {
     }
     vm.closeOptions = function() {
 
-        //    if (e.target !== this)
+        //if (e.target !== this)
         // return;
         vm.open = false;
     }
@@ -62,75 +62,60 @@ function questionController($scope, $http, $log, $document,$state) {
             vm.sectionQuestions = vm.test.questions.length;
             vm.currnetQuestionIndex = 0;
             vm.setsMaxIndex = vm.test.sets.length - 1;
-            vm.currentQuestionNum =  1;
-           
+            vm.currentQuestionNum = 1;
+
             calcQuestioPercent();
         });
 
 
-        $http.get("images/data/sampleQ.json")
+    $http.get("images/data/sampleQ.json")
         .then(function(response) {
-
             $scope.sampletest = response.data;
-            
             $scope.samplequestion = $scope.sampletest.question;
             $scope.sampleoption = $scope.sampletest.options;
-           
-           
-          
-           
         });
 
-       
-        $scope.InstructionPage = false;
+    $scope.InstructionPage = false;
+    $scope.InstructionPage1 = false;
+    $scope.startInstruction = function() {
+        $scope.InstructionPage = true;
         $scope.InstructionPage1 = false;
-        $scope.startInstruction = function() {
-            $scope.InstructionPage=true;
-            $scope.InstructionPage1 = false;
+        window.scrollTo(0,0)
+    };
 
-            
-            
-    
-};
-$scope.exitAssessment = function() {
-            $scope.InstructionPage=true;
-   
-     $scope.InstructionPage1=true;
-$state.reload();
-     
-};
-        $scope.check=false;
-        $scope.timercheck=false;
-  
-      
+    $scope.exitAssessment = function() {
+        $scope.InstructionPage = true;
+        $scope.InstructionPage1 = true;
+        $state.reload();
+    };
+
+    $scope.check = false;
+    $scope.timercheck = false;
+
+
     $scope.startEvaluation = function() {
-    $scope.check=true;
-
-    var timeLimit = 60 * 10;
-    startTimer(timeLimit);
-    
-};
-$scope.count =1;
+        $scope.check = true;
+        var timeLimit = 60 * 10;
+        startTimer(timeLimit);
+    };
+    $scope.count = 1;
 
 
-function endAssessment() {
-        $scope.count +=1;
-     $scope.InstructionPage1 = false;
-   
-}
+    function endAssessment() {
+        $scope.count += 1;
+        $scope.InstructionPage1 = false;
+    }
 
     vm.showNextQuestion = function() {
-       
+
         endAssessment();
         $scope.isButtonClicked = true;
         if (vm.currnetQuestionIndex < vm.sectionQuestions - 1) {
             vm.currnetQuestionIndex += 1;
             vm.test.currentQuestion = vm.test.questions[vm.currnetQuestionIndex];
-             vm.currentQuestionNum +=  1;
-             
-        } 
-        
-        else if ((vm.currnetQuestionIndex < vm.sectionQuestions - 1) || vm.test.set < vm.setsMaxIndex
+            vm.currentQuestionNum += 1;
+
+        } else if ((vm.currnetQuestionIndex < vm.sectionQuestions - 1) || vm.test.set < vm.setsMaxIndex
 
         ) {
             vm.test.set += 1;
@@ -138,7 +123,7 @@ function endAssessment() {
             vm.test.currentQuestion = vm.test.questions[0];
             vm.sectionQuestions = vm.test.questions.length;
             vm.currnetQuestionIndex = 0;
-              vm.currentQuestionNum +=  1;
+            vm.currentQuestionNum += 1;
             calcQuestioPercent();
 
         }
@@ -147,7 +132,7 @@ function endAssessment() {
     }
 
     function calcQuestioPercent() {
-        (vm.currentQuestionNum == vm.test.totalQuestions) ? vm.questionProgressPercent=100 : vm.questionProgressPercent = ((vm.currentQuestionNum-1) * 100) / vm.test.totalQuestions;
+        (vm.currentQuestionNum == vm.test.totalQuestions) ? vm.questionProgressPercent = 100: vm.questionProgressPercent = ((vm.currentQuestionNum - 1) * 100) / vm.test.totalQuestions;
     }
 
     function startTimer(duration) {
@@ -161,14 +146,12 @@ function endAssessment() {
             seconds = seconds < 10 ? "0" + seconds : seconds;
 
             vm.display = minutes + ":" + seconds;
-            if(vm.display == "00:00")
-            {
-                $scope.timercheck=true;
+            if (vm.display == "00:00") {
+                $scope.timercheck = true;
                 console.log("Timer check:" + $scope.timercheck);
             }
             vm.percent = (timer * 100) / duration;
             $scope.$apply();
-            console.log(  "timer" + vm.display);
             if (--timer < 0) {
                 timer = duration;
             }
