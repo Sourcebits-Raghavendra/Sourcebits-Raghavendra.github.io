@@ -6692,9 +6692,15 @@ h1.section-heading.question {
   width: 510px;
   padding-left: 15px; }
 
+.output2 > hr {
+  border-top: 1px solid #cccccc; }
+
 .output3 {
   width: 510px;
   padding-left: 15px; }
+
+.output3 > hr {
+  border-top: 1px solid #cccccc; }
 
 .right-option {
   color: #00adee; }
@@ -6782,16 +6788,21 @@ h1.section-heading.question {
   padding-left: 15px;
   padding-right: 15px; }
 
+.start-eval {
+  display: -ms-flexbox;
+  display: flex; }
+
 .btn-ceb1 {
   outline: none;
   margin-top: 15px;
+  margin-left: 15px;
   font-size: 16px;
   color: white;
   height: 44px;
   border-radius: 0px;
   font-family: 'proxima_semibold';
   border: 0px;
-  width: 100%;
+  width: 242px;
   color: white;
   /* For browsers that do not support gradients */
   /* For Safari 5.1 to 6.0 */
@@ -6802,6 +6813,35 @@ h1.section-heading.question {
   background: linear-gradient(white, #f3f3f3);
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2); }
   .btn-ceb1 .saved-for-later {
+    color: #00adee;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    /* For browsers that do not support gradients */
+    /* For Safari 5.1 to 6.0 */
+    /* For Opera 11.1 to 12.0 */
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white, #f3f3f3);
+    /* Standard syntax */
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2); }
+
+.btn-ceb2 {
+  outline: none;
+  margin-top: 15px;
+  margin-left: 10px;
+  width: 242px;
+  font-size: 16px;
+  color: white;
+  height: 44px;
+  border-radius: 0px;
+  font-family: 'proxima_semibold';
+  border: 0px;
+  color: white;
+  /* For browsers that do not support gradients */
+  /* For Safari 5.1 to 6.0 */
+  /* For Opera 11.1 to 12.0 */
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#00c8f3, #0097f3);
+  box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.15), 0px 3px 8px 0px rgba(0, 199, 243, 0.3); }
+  .btn-ceb2 .saved-for-later {
     color: #00adee;
     border: 1px solid rgba(0, 0, 0, 0.05);
     /* For browsers that do not support gradients */
@@ -6839,6 +6879,11 @@ h1.section-heading.question {
     background: linear-gradient(white, #f3f3f3);
     /* Standard syntax */
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2); }
+
+btn-ceb2:active,
+.btn-ceb2:focus {
+  outline: none;
+  color: white; }
 
 .btn-ceb:active,
 .btn-ceb:focus {
@@ -7043,6 +7088,9 @@ header {
   margin: 10px auto;
   font-size: 16px; }
 
+.info-box:last-child {
+  padding-bottom: 40px; }
+
 .info-box h4 {
   color: #0e406a;
   font-size: 18px; }
@@ -7056,10 +7104,12 @@ header {
 .info-bar {
   height: 50px;
   border-radius: 5px 5px 0 0;
-  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.16), inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+  /*box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.16), inset 0 1px 0 0 rgba(255, 255, 255, 0.9);*/
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background-image: linear-gradient(to bottom, #f9f9f9, #e5e5e5);
-  /*background: linear-gradient(#f7f7f7, #ebebeb);*/
-  border-bottom: 1px solid #e7e7e7; }
+  /*background: linear-gradient(#f7f
+    7f7, #ebebeb);*/
+  border-bottom: 1px solid #ccc; }
 
 .info-bar .info-title {
   text-transform: uppercase;
@@ -7070,8 +7120,16 @@ header {
 
 .info-box .info-box-content-wrap {
   padding: 15px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 0 0 5px 5px; }
+  border-radius: 0 0 5px 5px;
+  background-color: rgba(255, 255, 255, 0.9); }
+
+.info-box-content-wrap1 {
+  padding-left: 17px;
+  background: rgba(255, 255, 255, 0.9);
+  max-width: 515px; }
+
+.info-box-content-wrap1 > hr {
+  border-top: 1px solid #cccccc; }
 
 .info-box .info-box-content-wrap ol {
   list-style-type: decimal;
@@ -7088,7 +7146,8 @@ header {
   border-radius: 0; }
 
 .info-box:last-child .info-box-content-wrap {
-  padding: 15px 15px 20px 15px; }
+  padding: 15px 15px 20px 15px;
+  background-color: rgba(255, 255, 255, 0.9); }
 
 .full-screen {
   /*Hack to set the height to the entire screen height*/

@@ -198,38 +198,38 @@
             "questions": [{
                     "question": "What is the total number of calls regarding sending late payment notice?",
                     "options": [{
-                        "option": 0,
+                        "option": "0",
                         "isCorrect": "No"
                     }, {
-                        "option": 1,
+                        "option": "1",
                         "isCorrect": "No"
                     }, {
-                        "option": 2,
+                        "option": "2",
                         "isCorrect": "Yes"
                     }, {
-                        "option": 3,
+                        "option": "3",
                         "isCorrect": "No"
                     }, {
-                        "option": 4,
+                        "option": "4",
                         "isCorrect": "No"
                     }]
                 },
                 {
                     "question": "What is the total number of calls where a supervisor was requested?",
                     "options": [{
-                        "option": 0,
+                        "option": "0",
                         "isCorrect": "No"
                     }, {
-                        "option": 1,
+                        "option": "1",
                         "isCorrect": "No"
                     }, {
-                        "option": 2,
+                        "option": "2",
                         "isCorrect": "Yes"
                     }, {
-                        "option": 3,
+                        "option": "3",
                         "isCorrect": "No"
                     }, {
-                        "option": 4,
+                        "option": "4",
                         "isCorrect": "No"
                     }]
                 },

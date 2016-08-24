@@ -707,9 +707,9 @@
                         </label>
                      </div>
                   </div>
-                  <div class="output1" ng-show="ques.answer==null">
-                     <hr>
-                     Study the information above and select an answer to the sample question.
+                  <div class="info-box-content-wrap1" ng-show="ques.answer==null">
+                     <hr><p>
+                     Study the information above and select an answer to the sample question.</p>
                   </div>
                   <div class="output2" ng-show="ques.answer==3">
                      <hr>
@@ -725,11 +725,10 @@
                      <hr>
                      <div>Click the Start Evaluation Button to begin the assessment. </div>
                   </div>
-                  <div class="col-xs-6 options-margin" ng-hide="ques.answer==null">
+                  <div class="start-eval" ng-hide="ques.answer==null">
                      <button class="btn btn-ceb1" ng-click='exitAssessment()'>EXIT NOW</button>
-                  </div>
-                  <div class="col-xs-6 options-margin" ng-hide="ques.answer==null">
-                     <button class="btn btn-ceb" ng-click='startEvaluation()'>START EVALUATION</button>
+                  
+                     <button class="btn btn-ceb2" ng-click='startEvaluation()'>START EVALUATION</button>
                   </div>
                </div>
             </div>
@@ -754,8 +753,11 @@
                         </label>
                      </div>
                   </div>
-                  <div class="col-xs-12 options-margin">
+                  <div class="col-xs-12 options-margin" ng-hide="count==20">
                      <button class="btn btn-ceb" ng-click="ques.showNextQuestion()">NEXT</button>
+                  </div>
+                  <div class="col-xs-12 options-margin" ng-show="count==20">
+                     <button class="btn btn-ceb" ng-click="ques.showNextQuestion()">FINISH</button>
                   </div>
                </div>
             </div>

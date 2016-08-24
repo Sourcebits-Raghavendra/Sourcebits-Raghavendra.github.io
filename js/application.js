@@ -151,7 +151,7 @@ function questionController($scope, $http, $log, $document, $state) {
                 console.log("Timer check:" + $scope.timercheck);
             }
             vm.percent = (timer * 100) / duration;
-            $scope.$apply();
+            $scope.$apply(); 
             if (--timer < 0) {
                 timer = duration;
             }
