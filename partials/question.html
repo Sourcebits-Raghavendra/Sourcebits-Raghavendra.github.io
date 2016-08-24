@@ -87,7 +87,7 @@
                         </tr>
                         <tr>
                            <td>Last Updated</td>
-                           <td>07/21/2007</td>
+                           <td>21/07/2007</td>
                         </tr>
                         <tr>
                            <td>Account No.</td>
@@ -274,7 +274,7 @@
                         </tr>
                         <tr>
                            <td>Last Updated</td>
-                           <td>07/21/2007</td>
+                           <td>21/07/2007</td>
                         </tr>
                         <tr>
                            <td>Account No.</td>
@@ -699,25 +699,25 @@
                   <p class="ceb-question">{{samplequestion}}</p>
                </div>
                <div class="row">
-                  <div class="options-margin" ng-repeat="option in sampleoption">
-                     <div class="ceb-options" ng-class="{'active': ques.answer == option.option}" ng-click="ques.answer = option.option">
-                        <span class="option-text">{{option.option}} </span>
-                        <input class="pull-right" type="radio" name="optradio" ng-model="ques.answer" ng-value="option.option">
+                  <div class="options-margin" ng-repeat="samoption in sampleoption"> 
+                     <div class="ceb-options" ng-class="{'active': ques.answer1 == samoption.option}" ng-click="ques.answer1 = samoption.option">
+                        <span class="option-text">{{samoption.option}} </span>
+                        <input class="pull-right" type="radio" name="optradio" ng-model="ques.answer1" ng-value="samoption.option">
                         <label>
                         </label>
                      </div>
                   </div>
-                  <div class="info-box-content-wrap1" ng-show="ques.answer==null">
+                  <div class="info-box-content-wrap1" ng-show="ques.answer1==null">
                      <hr><p>
                      Study the information above and select an answer to the sample question.</p>
                   </div>
-                  <div class="output2" ng-show="ques.answer==3">
+                  <div class="output2" ng-show="ques.answer1==3">
                      <hr>
                      You have chosen the correct answer.
                      <hr>
                      <div>Click the Start Evaluation Button to begin the assessment. </div>
                   </div>
-                  <div class="output3" ng-show="ques.answer!=3 && ques.answer!=null">
+                  <div class="output3" ng-show="ques.answer1!=3 && ques.answer1!=null">
                      <hr>
                      You have chosen an incorrect answer.
                      <div>The correct answer to Sample Question 2 is</div>
@@ -725,10 +725,10 @@
                      <hr>
                      <div>Click the Start Evaluation Button to begin the assessment. </div>
                   </div>
-                  <div class="start-eval" ng-hide="ques.answer==null">
+                  <div class="start-eval" ng-hide="ques.answer1==null">
                      <button class="btn btn-ceb1" ng-click='exitAssessment()'>EXIT NOW</button>
                   
-                     <button class="btn btn-ceb2" ng-click='startEvaluation()'>START EVALUATION</button>
+                     <button class="btn btn-ceb2"  ng-click='startEvaluation(ques.answer)'>START EVALUATION</button>
                   </div>
                </div>
             </div>

@@ -152,6 +152,7 @@ function questionController($scope, $http, $log, $document, $state) {
             }
             vm.percent = (timer * 100) / duration;
             $scope.$apply(); 
+
             if (--timer < 0) {
                 timer = duration;
             }
