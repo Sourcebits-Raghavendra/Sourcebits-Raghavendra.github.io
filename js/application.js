@@ -80,13 +80,14 @@ function questionController($scope, $http, $log, $document, $state) {
     $scope.startInstruction = function() {
         $scope.InstructionPage = true;
         $scope.InstructionPage1 = false;
-        window.scrollTo(0,0)
+        window.scrollTo(0,0);
     };
 
     $scope.exitAssessment = function() {
         $scope.InstructionPage = true;
         $scope.InstructionPage1 = true;
         $state.reload();
+         window.scrollTo(0,0);
     };
 
     $scope.check = false;

@@ -17,7 +17,7 @@
             <td></td>
          </tr>
       </table>
-   </div>
+   </div>  
    <div ng-show="!InstructionPage || InstructionPage1">
       <div class="container instructions">
          <div class="row">
@@ -26,7 +26,7 @@
                   <p class="info-title">Assessment</p>
                </div>
                <div class="info-box-content-wrap">
-                  <h4 class="semiBold-font">You are about to complete an assessment </h4>
+                  <h4>You are about to complete an assessment </h4>
                   <p class="heading"> Assessment: </p>
                   <p>Working with information</p>
                   <p class="heading">Time Limit:</p>
@@ -49,11 +49,11 @@
                      <li>Each question has five possible choices. Please choose the one correct option to each question.</li>
                      <li>Work quickly, but do not rush. If you do not know an answer, select the response you think is most likely to be correct. Resist the urge to answer by guessing.</li>
                      <li>This assessment contains <span class="bold-font">20 questions.</span> This is a timed assessment, and you will have <span class="bold-font">10 minutes</span> to complete this assessment.</li>
-                     <li>You are permitted to skip items, but skipped items will be scored as <span class="bold-font">incorrect.</span> You will <span class="bold-font">not</span> have an apportunity to review questions at the end of this test.</li>
+                     <li>You are permitted to skip items, but skipped items will be scored as <span class="bold-font">incorrect.</span> You will <span class="bold-font">not</span> have an opportunity to review questions at the end of this test.</li>
                      <li>If you lose your internet connection, this test will restart where you left off.</li>
                   </ol>
-                  <p>It is important to note that some of the tables with in this testes are
-                     interactive. This means that you will need to scroll left/right or select the Heading tabs at the top of the table to toggle between screens of information.
+                  <p>It is important to note that <u>some of the tables within this tests are
+                     interactive.</u> This means that you will need to scroll left/right or select the Heading tabs at the top of the table to toggle between screens of information.
                   </p>
                   <p>
                      An example of an interactive table is presented below. Information required to answer the questions will be included on both the “Customer Interaction Info.” tab and the “Interaction Codes” tab. You may toggle between screens by swiping left/right or by clicking on the heading tabs for the screen you wish to review.
@@ -699,7 +699,7 @@
                   <p class="ceb-question">{{samplequestion}}</p>
                </div>
                <div class="row">
-                  <div class="options-margin" ng-repeat="samoption in sampleoption"> 
+                  <div class="options-margin" ng-repeat="samoption in sampleoption">
                      <div class="ceb-options" ng-class="{'active': ques.answer1 == samoption.option}" ng-click="ques.answer1 = samoption.option">
                         <span class="option-text">{{samoption.option}} </span>
                         <input class="pull-right" type="radio" name="optradio" ng-model="ques.answer1" ng-value="samoption.option">
@@ -728,7 +728,7 @@
                   <div class="start-eval" ng-hide="ques.answer1==null">
                      <button class="btn btn-ceb1" ng-click='exitAssessment()'>EXIT NOW</button>
                   
-                     <button class="btn btn-ceb2"  ng-click='startEvaluation(ques.answer)'>START EVALUATION</button>
+                     <button class="btn btn-ceb2"  ng-click='startEvaluation()'>START EVALUATION</button>
                   </div>
                </div>
             </div>
@@ -745,10 +745,12 @@
                </div>
                <div class="row">
                   <div class="options-margin" ng-repeat="option in ques.test.currentQuestion.options">
-                     <div class="ceb-options" ng-class="{'active': ques.answer == option.option}" ng-click="ques.answer = option.option">
+                     <div class="ceb-options" ng-class="{'active': ques.answer == option.option}" ng-click="ques.answer = option.option ; ques.answer1 = option.isCorrect" >
+                     
                         <span class="sr-only">Option {{$index+1}} {{option.option}}</span>
                         <span class="option-text">{{option.option}}</span>
                         <input class="pull-right" type="radio" name="optradio" ng-model="ques.answer" ng-value="option.option">
+   
                         <label>
                         </label>
                      </div>
