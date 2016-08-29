@@ -118,6 +118,7 @@ function questionController($scope, $http, $log, $document, $state,$rootScope) {
         startTimer(timeLimit);
         deviceType();
         $scope.sendSessionId();
+        window.scrollTo(0,0);
     };
 
     $scope.sendSessionId = function() {
@@ -128,20 +129,20 @@ function questionController($scope, $http, $log, $document, $state,$rootScope) {
         };
         // console.log(sessionData);
 
-        // $http({
-        //     method: 'POST',
-        //     headers: { 'Content-type': 'application/json','charset':'utf-8'},
-        //     data: {
-        //     "SessionId": $scope.sessionId,
-        //     "DeviceName": $scope.deviceType
-        //     },
-        //     url: 'http://192.168.10.213/CEBAPI/api/UserService/Create'
-        //     }).success(function(res){
+        $http({
+            method: 'POST',
+            headers: { 'Content-type': 'application/json','charset':'utf-8'},
+            data: {
+            "SessionId": $scope.sessionId,
+            "DeviceName": $scope.deviceType
+            },
+            url: 'http://192.168.10.213/CEBAPI/api/UserService/Create'
+            }).success(function(res){
                 
-        //     })
-        //     .error(function(err){
-        //         console.log("error",err);
-        //     });
+            })
+            .error(function(err){
+                console.log("error",err);
+            });
     };
 
     $scope.count = 1;
@@ -177,10 +178,7 @@ $scope.click = false;
     }
     $scope.NewTime1 = vm.display;
     vm.showNextQuestion = function(answer,option) {
-
-
-
-        
+            window.scrollTo(0, 0);
             
             // console.log("when not clicked "+ $scope.click);
             //$scope.ans = answer;
@@ -247,24 +245,24 @@ $scope.click = false;
                 "Duration": $scope.finaltime,
                 "User_SessionId": $scope.sessionId
             };
-            // $http({
-            // method: 'POST',
-            // headers: { 'Content-type': 'application/json','charset':'utf-8'},
-            // data: {
-            // "ItemType": $scope.ItemType,
-            //     "QuestionNumber": $scope.QuestionNumber,
-            //     "Answer": $scope.Answer, 
-            //     "IsRight": $scope.IsRight,
-            //     "Duration": $scope.finaltime,
-            //     "User_SessionId": $scope.sessionId
-            // },
-            // url: 'http://192.168.10.213/CEBAPI/api/AnswerService/CreateDWINFO'
-            // }).success(function(res){
-            //     console.log("success",res);
-            // })
-            // .error(function(err){
-            //     console.log("error",err);
-            // });
+            $http({
+            method: 'POST',
+            headers: { 'Content-type': 'application/json','charset':'utf-8'},
+            data: {
+            "ItemType": $scope.ItemType,
+                "QuestionNumber": $scope.QuestionNumber,
+                "Answer": $scope.Answer, 
+                "IsRight": $scope.IsRight,
+                "Duration": $scope.finaltime,
+                "User_SessionId": $scope.sessionId
+            },
+            url: 'http://192.168.10.213/CEBAPI/api/AnswerService/CreateDWINFO'
+            }).success(function(res){
+                console.log("success",res);
+            })
+            .error(function(err){
+                console.log("error",err);
+            });
 
              
 
