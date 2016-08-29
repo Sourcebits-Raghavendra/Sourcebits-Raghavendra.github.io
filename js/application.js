@@ -2,7 +2,7 @@
 App ceb
 ==================================================================*/
 'use strict';
-angular.module('ceb', ['ui.router','ui.bootstrap','ngAnimate','duScroll'])
+angular.module('ceb', ['ui.router','ui.bootstrap','ngAnimate','duScroll','angularMoment'])
 
 .config(['$stateProvider', "$urlRouterProvider", function($stateProvider, $urlRouterProvider) {
 
@@ -17,9 +17,13 @@ angular.module('ceb', ['ui.router','ui.bootstrap','ngAnimate','duScroll'])
         	templateUrl:"partials/complete.html"
         })
 }]);
-angular.module('ceb')
-.value('duScrollDuration', 1000)
-  .value('duScrollOffset', 1000)
+angular
+    .module('ceb')
+    .value('duScrollDuration', 1000)
+    .value('duScrollOffset', 1000)
+    .constant('CEB_API', {
+        sessionURL:'http://192.168.10.213/CEBAPI/api/UserService/Create'
+    })
 /* -------------------
 QUESTIONS CONTROLLER 
 ----------------------*/
@@ -31,8 +35,8 @@ angular
 // TIMER DEMO
 
 
-function questionController($scope, $http, $log, $document, $state) {
-
+function questionController($scope, $http, $log, $document, $state,$rootScope) {
+    //console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
     var vm = this;
     vm.open = false;
     vm.tab = true;
@@ -80,34 +84,192 @@ function questionController($scope, $http, $log, $document, $state) {
     $scope.startInstruction = function() {
         $scope.InstructionPage = true;
         $scope.InstructionPage1 = false;
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
     };
 
     $scope.exitAssessment = function() {
         $scope.InstructionPage = true;
         $scope.InstructionPage1 = true;
         $state.reload();
-         window.scrollTo(0,0);
+        window.scrollTo(0, 0);
     };
 
     $scope.check = false;
     $scope.timercheck = false;
 
+    var sesssionKeyGen = function() {
+        return '_' + Math.random().toString(36).substr(2, 9);
+    };
+
+    var deviceType = function() {
+        var deviceWidth = window.screen.width;
+        if (deviceWidth < 768) {
+            $scope.deviceType = "Mobile";
+        } else if (deviceWidth > 768 && deviceWidth < 992) {
+            $scope.deviceType = "Tablet";
+        } else if (deviceWidth > 992) {
+            $scope.deviceType = "PC";
+        }
+    };
 
     $scope.startEvaluation = function() {
         $scope.check = true;
         var timeLimit = 60 * 10;
         startTimer(timeLimit);
+        deviceType();
+        $scope.sendSessionId();
     };
-    $scope.count = 1;
 
+    $scope.sendSessionId = function() {
+        $scope.sessionId = sesssionKeyGen();
+        var sessionData = {
+            "SessionId": $scope.sessionId,
+            "DeviceName": $scope.deviceType
+        };
+        // console.log(sessionData);
+
+        // $http({
+        //     method: 'POST',
+        //     //withCredentials:true,
+        //     headers: { 'Content-type': 'application/json','charset':'utf-8'},
+        //     data: {
+        //     "SessionId": $scope.sessionId,
+        //     "DeviceName": $scope.deviceType
+        //     },
+        //     url: 'http://192.168.10.213/CEBAPI/api/UserService/Create'
+        //     }).success(function(res){
+        //         console.log("success",res);
+        //     })
+        //     .error(function(err){
+        //         console.log("error",err);
+        //     });
+    };
+
+    $scope.count = 1;
 
     function endAssessment() {
         $scope.count += 1;
         $scope.InstructionPage1 = false;
     }
+    function format(s) {
+        var ms = s % 1000;
+        s = (s - ms) / 1000;
+        var secs = s % 60;
+        s = (s - secs) / 60;
+        var mins = s % 60;
+        var hrs = (s - mins) / 60;
 
-    vm.showNextQuestion = function() {
+        hrs = (hrs < 10) ? "0" + hrs : hrs;
+        mins = (mins < 10) ? "0" + mins : mins;
+        secs = (secs < 10) ? "0" + secs : secs;
+
+
+
+        $scope.finaltime = hrs + ':' + mins + ':' + secs;        
+    };
+    function store(s) {
+       
+       $scope.oldtime = s;        
+    };
+$scope.click = false;
+   vm.isClick = function(){
+        
+        $scope.click = true;
+        // console.log("Isclicked Radio: "+$scope.click );
+    }
+    $scope.NewTime1 = vm.display;
+    vm.showNextQuestion = function(answer,option) {
+
+
+
+        
+            
+            // console.log("when not clicked "+ $scope.click);
+            //$scope.ans = answer;
+            if($scope.click !=true) 
+            {
+                answer ="";
+                $scope.IsRight=false;
+
+            }
+              
+             if(option=='No' )
+             {
+                    $scope.IsRight=false;
+             }
+             else if(option=='Yes' && $scope.click ==true)
+             {
+                    $scope.IsRight=true;
+             }
+             $scope.ItemType = vm.test.set+1;
+             $scope.QuestionNumber = vm.currentQuestionNum ;
+             $scope.Answer = answer;
+             if(parseInt(vm.currentQuestionNum) == 1)
+            {
+               // console.log("Time Taken: "+ (960 - parseInt($scope.min_sec)));
+                //$scope.NewTime = '10:00' - vm.display;
+                var start = moment('10:00', "mm:ss");
+            var stop = moment(vm.display, "mm:ss");
+            $scope.NewTime = moment.utc(start).diff(moment(stop));
+            format($scope.NewTime);
+            store(vm.display);
+            
+             //$scope.NewTime1 = moment($scope.NewTime, "mm:ss");
+            }
+            
+
+            if(parseInt(vm.currentQuestionNum) != 1)
+            {
+               // console.log("Time Taken: "+ (960 - parseInt($scope.min_sec)));
+
+               var start = moment(vm.display, "mm:ss");
+            var stop = moment($scope.oldtime, "mm:ss");
+            $scope.NewTime = moment.utc(stop).diff(moment(start));
+            format($scope.NewTime);
+
+            store(vm.display);
+               
+                
+            }
+
+            
+           
+
+             // console.log("ItemType:  "+ $scope.ItemType);
+             // console.log("QuestionNumber: "+ $scope.QuestionNumber);
+             // console.log("Answer: "+ $scope.Answer);
+             // console.log("IsRight: " + $scope.IsRight);
+             // console.log("Duration1: "+ vm.display);
+             // console.log("Duration: "+ $scope.finaltime);
+             var data1 = {
+                "ItemType": $scope.ItemType,
+                "QuestionNumber": $scope.QuestionNumber,
+                "Answer": $scope.Answer, 
+                "IsRight": $scope.IsRight,
+                "Duration": $scope.finaltime,
+                "User_SessionId": $scope.sessionId
+            };
+            // console.log($scope.sessionId);
+            // $http({
+            // method: 'POST',
+            // headers: { 'Content-type': 'application/json','charset':'utf-8'},
+            // data: {
+            // "ItemType": $scope.ItemType,
+            //     "QuestionNumber": $scope.QuestionNumber,
+            //     "Answer": $scope.Answer, 
+            //     "IsRight": $scope.IsRight,
+            //     "Duration": $scope.finaltime,
+            //     "User_SessionId": $scope.sessionId
+            // },
+            // url: 'http://192.168.10.213/CEBAPI/api/AnswerService/CreateDWINFO'
+            // }).success(function(res){
+            //     console.log("success",res);
+            // })
+            // .error(function(err){
+            //     console.log("error",err);
+            // });
+
+             
 
         endAssessment();
         $scope.isButtonClicked = true;
@@ -130,6 +292,7 @@ function questionController($scope, $http, $log, $document, $state) {
         }
         calcQuestioPercent();
         $document.scrollToElementAnimated(someElement);
+        $scope.click =false ;
     }
 
     function calcQuestioPercent() {
@@ -152,7 +315,7 @@ function questionController($scope, $http, $log, $document, $state) {
                 console.log("Timer check:" + $scope.timercheck);
             }
             vm.percent = (timer * 100) / duration;
-            $scope.$apply(); 
+            $scope.$apply();
 
             if (--timer < 0) {
                 timer = duration;
@@ -163,6 +326,3 @@ function questionController($scope, $http, $log, $document, $state) {
     //startTimer(timeLimit);
 
 }
-/* -------------------
-QUESTIONS CONTROLLER END
-----------------------*/
