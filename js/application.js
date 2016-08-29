@@ -130,7 +130,6 @@ function questionController($scope, $http, $log, $document, $state,$rootScope) {
 
         // $http({
         //     method: 'POST',
-        //     //withCredentials:true,
         //     headers: { 'Content-type': 'application/json','charset':'utf-8'},
         //     data: {
         //     "SessionId": $scope.sessionId,
@@ -138,7 +137,7 @@ function questionController($scope, $http, $log, $document, $state,$rootScope) {
         //     },
         //     url: 'http://192.168.10.213/CEBAPI/api/UserService/Create'
         //     }).success(function(res){
-        //         console.log("success",res);
+                
         //     })
         //     .error(function(err){
         //         console.log("error",err);
@@ -175,7 +174,6 @@ $scope.click = false;
    vm.isClick = function(){
         
         $scope.click = true;
-        // console.log("Isclicked Radio: "+$scope.click );
     }
     $scope.NewTime1 = vm.display;
     vm.showNextQuestion = function(answer,option) {
@@ -249,7 +247,6 @@ $scope.click = false;
                 "Duration": $scope.finaltime,
                 "User_SessionId": $scope.sessionId
             };
-            // console.log($scope.sessionId);
             // $http({
             // method: 'POST',
             // headers: { 'Content-type': 'application/json','charset':'utf-8'},

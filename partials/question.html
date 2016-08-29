@@ -71,8 +71,8 @@
                <h1 class="section-heading instruction">INFORMATION</h1>
                <div class="btn-group-container">
                   <div class="btn-group btn-group-justified">
-                     <a href="#" class="btn btn-tab" ng-class="{'active': ques.tab}" ng-click="ques.tab = true">Customer Interaction Info.</a>
-                     <a href="#" class="btn  btn-tab" ng-class="{'active': !ques.tab}" ng-click="ques.tab = false">Interaction Codes</a>
+                     <a href="#" class="btn btn-tab" ng-class="{'active': ques.tab}" ng-click="ques.tab = true" onclick="return false;">Customer Interaction Info.</a>
+                     <a href="#" class="btn  btn-tab" ng-class="{'active': !ques.tab}" ng-click="ques.tab = false" onclick="return false;">Interaction Codes</a>
                   </div>
                </div>
                <div ng-if="ques.tab">
