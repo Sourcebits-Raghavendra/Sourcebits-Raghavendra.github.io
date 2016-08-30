@@ -6435,12 +6435,20 @@ SMACSS: LAYOUT - COMMON
 -------------------------------------------------*/
 body {
   background-color: #fff;
-  font-family: 'proxima_regular'; }
+  font-family: 'proxima_regular';
+  background: url("../images/ceb-background.jpg") no-repeat center center fixed;
+  background-size: cover; }
+
+.remove-body-bg {
+  background: #fff; }
+
+.add-body-bg {
+  background: url("../images/ceb-background.jpg") no-repeat center center fixed;
+  background-size: cover; }
 
 header,
 footer {
-  max-width: 800px;
-  margin: 50px auto; }
+  max-width: 800px; }
 
 .width-500 {
   max-width: 500px;
@@ -6835,7 +6843,6 @@ h1.section-heading.question {
   border-radius: 0px;
   font-family: 'proxima_semibold';
   border: 0px;
-  color: white;
   /* For browsers that do not support gradients */
   /* For Safari 5.1 to 6.0 */
   /* For Opera 11.1 to 12.0 */
@@ -6887,6 +6894,49 @@ h1.section-heading.question {
 btn-ceb2:active,
 .btn-ceb2:focus {
   outline: none;
+  color: white;
+  /* For browsers that do not support gradients */
+  /* For Safari 5.1 to 6.0 */
+  /* For Opera 11.1 to 12.0 */
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#00c8f3, #0097f3);
+  box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.15), 0px 3px 8px 0px rgba(0, 199, 243, 0.3); }
+
+.btn-ceb3 {
+  outline: none;
+  margin-top: 10px;
+  font-size: 16px;
+  color: white;
+  height: 44px;
+  border-radius: 0px;
+  font-family: 'proxima_semibold';
+  border: 0px;
+  width: 100%;
+  color: white;
+  /* For browsers that do not support gradients */
+  background: linear-gradient(white, #f3f3f3);
+  /* For Safari 5.1 to 6.0 */
+  /* For Opera 11.1 to 12.0 */
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#00c8f3, #0097f3);
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(white, #f3f3f3);
+  color: #00adee;
+  border: 1px solid rgba(204, 204, 204, 0.2); }
+  .btn-ceb3 .saved-for-later {
+    color: #00adee;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    /* For browsers that do not support gradients */
+    /* For Safari 5.1 to 6.0 */
+    /* For Opera 11.1 to 12.0 */
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white, #f3f3f3);
+    /* Standard syntax */
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2); }
+
+btn-ceb2:active,
+.btn-ceb2:focus {
+  outline: none;
   color: white; }
 
 .btn-ceb:active,
@@ -6904,6 +6954,15 @@ btn-ceb2:active,
   box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.15), 0px 3px 8px 0px rgba(0, 199, 243, 0.3); }
 
 .btn-ceb1:hover {
+  color: white;
+  /* For browsers that do not support gradients */
+  /* For Safari 5.1 to 6.0 */
+  /* For Opera 11.1 to 12.0 */
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#00c8f3, #0097f3);
+  box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.15), 0px 3px 8px 0px rgba(0, 199, 243, 0.3); }
+
+.btn-ceb3:hover {
   color: white;
   /* For browsers that do not support gradients */
   /* For Safari 5.1 to 6.0 */
@@ -7085,8 +7144,8 @@ header {
 
 /* Instruction & Exit Page */
 .ceb-background {
-  background: url("../images/ceb-background.jpg") no-repeat center center;
-  background-size: cover; }
+  /* background:url('../images/ceb-background.jpg') no-repeat center center fixed;
+    background-size: cover;*/ }
 
 .info-box {
   margin: 10px auto;
@@ -7170,8 +7229,8 @@ header {
 .exit-info {
   font-size: 16px; }
 
-.full-screen .info-box {
-  margin: 45px auto; }
+.info-box {
+  margin: 15px auto 10px; }
 
 .bold-font {
   font-family: 'proxima_semibold'; }
@@ -7184,61 +7243,64 @@ header {
   padding: 5px;
   border-radius: 0 0 5px 5px; }
 
+.stop-overflow {
+  overflow-y: hidden; }
+
 /*==========  Mobile First Method  ==========*/
 /* Custom, iPhone Retina */
 @media only screen and (min-width: 320px) {
-  .full-screen .tick-img {
+  .tick-img {
     margin-left: 40px;
     margin-top: 55px; }
-  .full-screen .exit-button {
+  .exit-button {
     margin-top: 35px; } }
 
 @media only screen and (min-width: 375px) {
-  .full-screen .tick-img {
+  .tick-img {
     margin-left: 60px;
     margin-top: 55px; }
-  .full-screen .exit-button {
+  .exit-button {
     margin-top: 35px; } }
 
 @media only screen and (min-width: 425px) {
-  .full-screen .tick-img {
+  .tick-img {
     margin-left: 90px;
     margin-top: 55px; }
-  .full-screen .exit-button {
+  .exit-button {
     margin-top: 35px; } }
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 480px) {
-  .full-screen .tick-img {
+  .tick-img {
     margin-left: 125px;
     margin-top: 55px; }
-  .full-screen .exit-button {
+  .exit-button {
     margin-top: 35px; } }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
-  .full-screen .tick-img {
+  .tick-img {
     margin-left: 145px;
     margin-top: 55px; }
-  .full-screen .exit-button {
+  .exit-button {
     margin-top: 35px; }
   .tablet-margin {
     margin-top: 222px !important; } }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
-  .full-screen .tick-img {
+  .tick-img {
     margin-left: 133px;
     margin-top: 55px; }
-  .full-screen .exit-button {
+  .exit-button {
     margin-top: 35px; } }
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width: 1200px) {
-  .full-screen .tick-img {
+  .tick-img {
     margin-left: 130px;
     margin-top: 55px; }
-  .full-screen .exit-button {
+  .exit-button {
     margin-top: 35px; } }
 
 /*-------------------------------------------------

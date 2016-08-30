@@ -1,8 +1,8 @@
-<!-- ****************
+<!--****************
    Question page VIEW
     **************** -->
 
-<div ng-controller="questionController as ques" class="ceb-background">
+<div ng-controller="questionController as ques">
    <div id="sticky-anchor"></div>
    <div id="sticky" ng-show="check && count!=21 && !timercheck">
       <div class="timer-bar">
@@ -53,7 +53,7 @@
                      <li>You are permitted to skip items, but skipped items will be scored as <span class="bold-font">incorrect.</span> You will <span class="bold-font">not</span> have an opportunity to review questions at the end of this test.</li>
                      <li>If you lose your internet connection, this test will restart where you left off.</li>
                   </ol>
-                  <p>It is important to note that <u>some of the tables within this tests are
+                  <p>It is important to note that <u>some of the tables within these tests are
                      interactive.</u> This means that you will need to scroll left/right or select the Heading tabs at the top of the table to toggle between screens of information.
                   </p>
                   <p>
@@ -209,11 +209,11 @@
                <div class="btn-group-container">
                   <div class="instruction-heading">Coding Customer Transactions</div>
                   <p>
-                     When coding customer transactions <strong>always</strong> begin with the type of account, followed by dollar amount and withdrawal or deposit codes.
+                     When coding customer transactions <span class="bold-font">always</span> begin with the type of account, followed by dollar amount and withdrawal or deposit codes.
                   </p>
                   <p>
                      There are two types of accounts:
-                     <strong>PAS</strong> and <strong>GLD</strong>.
+                     <span class="bold-font">PAS</span> and <span class="bold-font">GLD</span>.
                   </p>
                </div>
                <div>
@@ -258,9 +258,9 @@
                <h1 class="section-heading instruction">INFORMATION</h1>
                <div class="btn-group-container">
                   <div class="btn-group btn-group-justified">
-                     <a href="#" class="btn btn-tab" ng-class="{'active': ques.tab}" ng-click="ques.tab = true">Customer Interaction Info.</a>
-                     <a href="#" class="btn  btn-tab" ng-class="{'active': !ques.tab}" ng-click="ques.tab = false">Interaction Codes</a>
-                  </div>
+                    <a href="#" class="btn btn-tab" ng-class="{'active': !ques.tab}" ng-click="ques.tab = false" onclick="return false;">Customer Interaction Info.</a>
+                    <a href="#" class="btn  btn-tab"  ng-class="{'active': ques.tab}" ng-click="ques.tab = true" onclick="return false;">Interaction Codes</a>
+                 </div>
                </div>
                <div ng-if="ques.tab">
                   <table class="table ceb-table">
@@ -683,7 +683,7 @@
                   <p>
                      Click “Start Sample Question” to be taken to a sample question to help get you more familiar with the format before starting.
                   </p>
-                  <div class="col-xs-14 options-margin">
+                  <div class="col-xs-14">
                      <button class="btn btn-ceb" ng-click="startInstruction()">START EXAMPLE QUESTION</button>
                   </div>
                </div>
@@ -726,11 +726,24 @@
                      <hr>
                      <div>Click the Start Evaluation Button to begin the assessment. </div>
                   </div>
-                  <div class="start-eval" ng-hide="ques.answer1==null">
+
+                  <div class="start-eval hidden-xs" ng-hide="ques.answer1==null">
                      <button class="btn btn-ceb1" ng-click='exitAssessment()'>EXIT NOW</button>
                   
                      <button class="btn btn-ceb2"  ng-click='startEvaluation()'>START EVALUATION</button>
                   </div>
+                  <!-- Will be show only for small mobile devices -->
+                  <div class="container">
+                     <div class="hidden-sm hidden-md hidden-lg" ng-hide="ques.answer1==null">
+                        <div class="col-xs-12 options-margin">
+                           <button class="btn btn-ceb"  ng-click='startEvaluation()'>START EVALUATION</button>
+                        </div>
+                        <div class="col-xs-12 options-margin">
+                           <button class="btn btn-ceb3" ng-click='exitAssessment()'>EXIT NOW</button>
+                        </div>
+                      </div>
+                  </div>
+                  <!-- End for mobile devices -->
                </div>
             </div>
          </div>
@@ -767,7 +780,7 @@
          </div>
       </div>
    </div>
-   <div class="full-screen exit-page"  ng-show="check && count==21 && InstructionPage && !InstructionPage1" >
+   <div class="exit-page"  ng-show="check && count==21 && InstructionPage && !InstructionPage1" >
       <div class="container questions">
          <div class="row">
             <div class="width-500 info-box tablet-margin">
@@ -787,7 +800,7 @@
          </div>
       </div>
    </div>
-   <div class="full-screen"  ng-show="check && count!=21 &&  timercheck && InstructionPage && !InstructionPage1">
+   <div class=""  ng-show="check && count!=21 &&  timercheck && InstructionPage && !InstructionPage1">
       <div class="container questions">
          <div class="row">
             <div class="width-500 info-box tablet-margin">
@@ -823,4 +836,4 @@
       </div>
    </div>
 </div>
-<!-- questions controller  -->
+<!-- questions controller -->
