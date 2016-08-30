@@ -36,10 +36,6 @@ angular
 
 
 function questionController($scope, $http, $log, $document, $state,$rootScope) {
-    //console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
-    console.log($document[0].body);
-
-  
     var vm = this;
     vm.open = false;
     vm.tab = true;
@@ -85,6 +81,7 @@ function questionController($scope, $http, $log, $document, $state,$rootScope) {
     $scope.InstructionPage = false;
     $scope.InstructionPage1 = false;
     $scope.startInstruction = function() {
+        $document.find('body').css('background','none')
         $scope.InstructionPage = true;
         $scope.InstructionPage1 = false;
         window.scrollTo(0, 0);
@@ -108,7 +105,7 @@ function questionController($scope, $http, $log, $document, $state,$rootScope) {
         var deviceWidth = window.screen.width;
         if (deviceWidth < 768) {
             $scope.deviceType = "Mobile";
-        } else if (deviceWidth > 768 && deviceWidth < 992) {
+        } else if (deviceWidth >= 768 && deviceWidth < 992) {
             $scope.deviceType = "Tablet";
         } else if (deviceWidth > 992) {
             $scope.deviceType = "PC";
@@ -116,6 +113,7 @@ function questionController($scope, $http, $log, $document, $state,$rootScope) {
     };
 
     $scope.startEvaluation = function() {
+        // $document.find('body').css('background','none')
         $scope.check = true;
         var timeLimit = 60 * 10;
         startTimer(timeLimit);
@@ -176,14 +174,21 @@ function questionController($scope, $http, $log, $document, $state,$rootScope) {
     };
 $scope.click = false;
    vm.isClick = function(){
-        
+        // $document.find('body').css('background','none')
         $scope.click = true;
     }
     $scope.NewTime1 = vm.display;
     vm.showNextQuestion = function(answer,option) {
             window.scrollTo(0, 0);
+            if($scope.count>19){
+                $document.find('body').css('background','');
+                console.log("Add image on complete ");
+            }
             
-        
+            // if($scope.check && $scope.count!=21 && !$scope.timercheck){
+            //         $document.find('body').css('background','none')
+            //         console.log(":sdvkjasdbvalskjdvbaljshvbajkhsdv");
+            //     }
 
             // console.log("when not clicked "+ $scope.click);
             //$scope.ans = answer;
@@ -311,7 +316,7 @@ $scope.click = false;
 
             vm.display = minutes + ":" + seconds;
             if (vm.display == "00:00") {
-                $scope.timercheck = true;
+                $scope.timerht = true;
                 console.log("Timer check:" + $scope.timercheck);
             }
             vm.percent = (timer * 100) / duration;
