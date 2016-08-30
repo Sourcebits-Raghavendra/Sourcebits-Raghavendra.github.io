@@ -130,20 +130,20 @@ function questionController($scope, $http, $log, $document, $state,$rootScope) {
         };
         // console.log(sessionData);
 
-        // $http({
-        //     method: 'POST',
-        //     headers: { 'Content-type': 'application/json','charset':'utf-8'},
-        //     data: {
-        //     "SessionId": $scope.sessionId,
-        //     "DeviceName": $scope.deviceType
-        //     },
-        //     url: 'http://192.168.10.213/CEBAPI/api/UserService/Create'
-        //     }).success(function(res){
+            // $http({
+            // method: 'POST',
+            // headers: { 'Content-type': 'application/json','charset':'utf-8'},
+            // data: {
+            // "SessionId": $scope.sessionId,
+            // "DeviceName": $scope.deviceType
+            // },
+            // url: 'http://192.168.10.213/CEBAPI/api/UserService/Create'
+            // }).success(function(res){
                 
-        //     })
-        //     .error(function(err){
-        //         console.log("error",err);
-        //     });
+            // })
+            // .error(function(err){
+            //     console.log("error",err);
+            // });
     };
 
     $scope.count = 1;
