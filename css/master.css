@@ -6758,9 +6758,11 @@ h1.section-heading.question {
   padding-right: 10px;
   /*padding-top: 12px;*/
   /*//display: table-cell;*/
-  display: -ms-flexbox;
-  display: flex;
+ 
   -ms-flex-align: center;
+  display: -webkit-flex; /* NEW */
+   
+  -webkit-align-items: center; 
   align-items: center;
   vertical-align: middle;
   color: #00adee;
@@ -6769,6 +6771,14 @@ h1.section-heading.question {
   .ceb-options .option-text {
     float: left;
     width: 85%;
+	align-items: center;
+	-webkit-align-items: center; 
+	 -ms-flex-align: center;
+	
+  display: -webkit-flex; /* NEW */
+	vertical-align: middle;
+	height: auto;
+    line-height: normal;
     padding-top: 10px;
     padding-bottom: 10px; }
 
@@ -7060,7 +7070,7 @@ input[type=radio]:not(old) + label {
   margin-left: 40px;
   padding-left: 28px;
   background: url("/images/answerRadioNormal.png") no-repeat 0 0;
-  line-height: 24px; }
+   }
 
 input[type=checkbox]:not(old):checked + label {
   background-position: 0 -24px; }
