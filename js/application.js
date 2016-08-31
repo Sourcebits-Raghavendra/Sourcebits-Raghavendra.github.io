@@ -130,7 +130,7 @@ function questionController($scope, $http, $log, $document, $state,$rootScope) {
         };
         // console.log(sessionData);
 
-            // $http({
+        // $http({
             // method: 'POST',
             // headers: { 'Content-type': 'application/json','charset':'utf-8'},
             // data: {
@@ -142,7 +142,7 @@ function questionController($scope, $http, $log, $document, $state,$rootScope) {
                 
             // })
             // .error(function(err){
-            //     console.log("error",err);
+                // console.log("error",err);
             // });
     };
 
@@ -260,18 +260,18 @@ $scope.click = false;
             // headers: { 'Content-type': 'application/json','charset':'utf-8'},
             // data: {
             // "ItemType": $scope.ItemType,
-            //     "QuestionNumber": $scope.QuestionNumber,
-            //     "Answer": $scope.Answer, 
-            //     "IsRight": $scope.IsRight,
-            //     "Duration": $scope.finaltime,
-            //     "User_SessionId": $scope.sessionId
+                // "QuestionNumber": $scope.QuestionNumber,
+                // "Answer": $scope.Answer, 
+                // "IsRight": $scope.IsRight,
+                // "Duration": $scope.finaltime,
+                // "User_SessionId": $scope.sessionId
             // },
             // url: 'http://192.168.10.213/CEBAPI/api/AnswerService/CreateDWINFO'
             // }).success(function(res){
-            //     console.log("success",res);
+                // console.log("success",res);
             // })
             // .error(function(err){
-            //     console.log("error",err);
+                // console.log("error",err);
             // });
 
              
@@ -316,7 +316,8 @@ $scope.click = false;
 
             vm.display = minutes + ":" + seconds;
             if (vm.display == "00:00") {
-                $scope.timerht = true;
+				$document.find('body').css('background','');
+                $scope.timercheck = true;
                 console.log("Timer check:" + $scope.timercheck);
             }
             vm.percent = (timer * 100) / duration;
