@@ -64,6 +64,9 @@
          </div>
       </div>
    </div>
+   <!--Question-->
+  
+  <!-- ./ question --> 
        <div class="" >
             <div ng-show="!check && !InstructionPage || InstructionPage1">
            
@@ -76,7 +79,7 @@
                   </div>
                </div>
                <div ng-if="ques.tab">
-                  <table class="table ceb-table">
+                  <table class="table ceb-table customer-interaction">
                      <tbody>
                         <tr>
                            <td>Name</td>
@@ -100,7 +103,7 @@
                         </tr>
                      </tbody>
                   </table>
-                  <table class="table ceb-table">
+                  <table class="table ceb-table customer-interaction">
                      <thead>
                         <tr>
                            <th>Date</th>
@@ -141,7 +144,7 @@
                   </table>
                </div>
                <div ng-if="!ques.tab">
-                  <table class="table ceb-table">
+                  <table class="table ceb-table interaction-tab">
                      <tbody>
                         <tr>
                            <td>LY </td>
@@ -201,7 +204,7 @@
             </div>
 
             </div>
-   <div class="instructions-wrapper" ng-hide="!check && !InstructionPage || InstructionPage1">
+   <div class="instructions-wrapper" ng-hide="!check && !InstructionPage || InstructionPage1 || info_overlay">
       <div class="container instructions">
          <div class="row">
             <div class="width-500" ng-if="ques.test.set == 0" ng-show="check && count!=21 && !timercheck ">
@@ -263,7 +266,7 @@
                  </div>
                </div>
                <div ng-if="ques.tab">
-                  <table class="table ceb-table">
+                  <table class="table ceb-table customer-interaction">
                      <tbody>
                         <tr>
                            <td>Name</td>
@@ -287,7 +290,7 @@
                         </tr>
                      </tbody>
                   </table>
-                  <table class="table ceb-table">
+                  <table class="table ceb-table customer-interaction">
                      <thead>
                         <tr>
                            <th>Date</th>
@@ -328,7 +331,7 @@
                   </table>
                </div>
                <div ng-if="!ques.tab">
-                  <table class="table ceb-table">
+                  <table class="table ceb-table interaction-tab">
                      <tbody>
                         <tr>
                            <td>LY </td>
@@ -442,7 +445,7 @@
                   </div>
                </div>
                <div ng-if="ques.tab">
-                  <table class="table ceb-table">
+                  <table class="table ceb-table customer-interaction">
                      <tbody>
                         <tr>
                            <td>Name</td>
@@ -454,7 +457,7 @@
                         </tr>
                         <tr>
                            <td>Last Updated</td>
-                           <td>21/07/2007</td>
+                           <td>21/07/2007</td> 
                         </tr>
                         <tr>
                            <td>Account No.</td>
@@ -466,7 +469,7 @@
                         </tr>
                      </tbody>
                   </table>
-                  <table class="table ceb-table">
+                  <table class="table ceb-table customer-interaction">
                      <thead>
                         <tr>
                            <th>Date</th>
@@ -507,7 +510,7 @@
                   </table>
                </div>
                <div ng-if="!ques.tab">
-                  <table class="table ceb-table">
+                  <table class="table ceb-table interaction-tab">
                      <tbody>
                         <tr>
                            <td>LY </td>
@@ -684,7 +687,7 @@
                      Click “Start Sample Question” to be taken to a sample question to help get you more familiar with the format before starting.
                   </p>
                   <div class="col-xs-14">
-                     <button class="btn btn-ceb" ng-click="startInstruction()">START EXAMPLE QUESTION</button>
+                     <button class="btn btn-ceb" ng-click="startInstruction();ques.tab=true">START EXAMPLE QUESTION</button>
                   </div>
                </div>
             </div>
@@ -730,7 +733,7 @@
                   <div class="start-eval hidden-xs" ng-hide="ques.answer1==null">
                      <button class="btn btn-ceb1" ng-click='exitAssessment()'>EXIT NOW</button>
                   
-                     <button class="btn btn-ceb2"  ng-click='startEvaluation()'>START EVALUATION</button>
+                     <button class="btn btn-ceb2"  ng-click="startEvaluation();ques.answer1=''">START EVALUATION</button>
                   </div>
                   <!-- Will be show only for small mobile devices -->
                   <div class="container">
@@ -750,35 +753,44 @@
       </div>
    </div>
    <div class="white-div"  ng-show="check && count!=21 && !timercheck">
-      <div class="container questions">
-         <div class="row">
-            <div class="width-500">
-               <div class="question-heading-group">
-                  <h1 class="section-heading question">QUESTION</h1>
-                  <p class="ceb-question">{{ques.test.currentQuestion.question}}</p>
-               </div>
-               <div class="row">
-                  <div class="options-margin" ng-repeat="option in ques.test.currentQuestion.options">
-                     <div class="ceb-options" ng-class="{'active': ques.answer == option.option}" ng-click="ques.answer = option.option ; ques.answer1 = option.isCorrect ; ques.isClick()" >
-                     
-                        <span class="sr-only">Option {{$index+1}} {{option.option}}</span>
-                        <span class="option-text">{{option.option}}</span>
-                        <input class="pull-right" type="radio" name="optradio" ng-model="ques.answer" ng-value="option.option" ng-model="ques.answer.checked" >
-                        <label>
-                        </label>
-                     </div>
-                  </div>
-                  <div class="col-xs-12 options-margin" ng-hide="count==20">
-                     <button class="btn btn-ceb" ng-click="ques.showNextQuestion(ques.answer,ques.answer1)">NEXT</button>
+      <div class="bottom-div" ng-class="{'open': ques.open}" ng-click="ques.open ||ques.openOptions()">
+         <!-- ngIf: !ques.open -->
+         <div class="text-center slider-div-up ng-scope" ng-if="!ques.open">
+            <!--<span class="slider-btn-up"> <span class="glyphicon glyphicon-triangle-top"></span> Tap for answers</span>-->
+         </div><!-- end ngIf: !ques.open -->
+     <!-- ngIf: ques.open -->
+
+         <div class="container questions">
+        <div class="row">
+           <div class="width-500">
+              <div class="question-heading-group"  ng-hide="info_overlay">
+                 <h1 class="section-heading question">QUESTION</h1>
+                 <p class="ceb-question">{{ques.test.currentQuestion.question}}</p>
+              </div>
+              <div class="row">
+                 <div class="options-margin" ng-repeat="option in ques.test.currentQuestion.options">
+                    <div class="ceb-options" ng-class="{'active': ques.answer == option.option}" ng-click="ques.answer = option.option ; ques.answer1 = option.isCorrect ; ques.isClick()" ng-disabled="ques.answer" >
                     
-                  </div>
-                  <div class="col-xs-12 options-margin" ng-show="count==20">
-                     <button class="btn btn-ceb" ng-click="ques.showNextQuestion()">FINISH</button>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
+                       <span class="sr-only">Option {{$index+1}} {{option.option}}</span>
+                       <span class="option-text">{{option.option}}</span>
+                       <input class="pull-right" type="radio" name="optradio" ng-model="ques.answer" ng-value="option.option" ng-disabled="ques.answer">
+                       <label>
+                       </label>
+                    </div>
+                 </div>
+                 <div class="col-xs-12 options-margin" ng-hide="count==20">
+                    <button class="btn btn-ceb" ng-click="ques.showNextQuestion(ques.answer,ques.answer1);ques.answer='';option.option='';ques.tab=true">NEXT</button>
+                   
+                 </div>
+                 <div class="col-xs-12 options-margin" ng-show="count==20">
+                    <button class="btn btn-ceb" ng-click="ques.showNextQuestion()">FINISH</button>
+                 </div>
+              </div>
+           </div>
+        </div>
+         </div>      
+              
+      </div>     
    </div>
    <div class="exit-page"  ng-show="check && count==21 && InstructionPage && !InstructionPage1" >
       <div class="container questions">
@@ -800,7 +812,7 @@
          </div>
       </div>
    </div>
-   <div class=""  ng-show="check && count!=21 &&  timercheck && InstructionPage && !InstructionPage1">
+   <div class="exit-page"  ng-show="check && count!=21 &&  timercheck && InstructionPage && !InstructionPage1">
       <div class="container questions">
          <div class="row">
             <div class="width-500 info-box tablet-margin">

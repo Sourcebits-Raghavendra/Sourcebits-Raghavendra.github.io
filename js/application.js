@@ -81,7 +81,7 @@ function questionController($scope, $http, $log, $document, $state,$rootScope) {
     $scope.InstructionPage = false;
     $scope.InstructionPage1 = false;
     $scope.startInstruction = function() {
-        $document.find('body').css('background','none')
+        $document.find('body').css('background','none');
         $scope.InstructionPage = true;
         $scope.InstructionPage1 = false;
         window.scrollTo(0, 0);
@@ -90,7 +90,7 @@ function questionController($scope, $http, $log, $document, $state,$rootScope) {
     $scope.exitAssessment = function() {
         $scope.InstructionPage = true;
         $scope.InstructionPage1 = true;
-        $state.reload();
+        window.location = "/";
         window.scrollTo(0, 0);
     };
 
@@ -111,7 +111,26 @@ function questionController($scope, $http, $log, $document, $state,$rootScope) {
             $scope.deviceType = "PC";
         }
     };
-
+    $scope.first_overlay = false;
+$scope.overlay = false;
+$scope.info_overlay = false;
+$scope.Overlay = function() {
+      $scope.overlay =true;
+       $scope.first_overlay =true;
+        console.log("first Clicked");
+    };
+ $scope.answerOverlay = function() {
+       $scope.info_overlay =true;
+       $scope.overlay =false;
+        $scope.first_overlay = true;
+        console.log("Answer Clicked");
+    };
+     $scope.infoOverlay = function() {
+       //$scope.info_overlay =true;
+       $scope.overlay =true;
+       $scope.info_overlay =false;
+       console.log("Info Clicked");
+    };
     $scope.startEvaluation = function() {
         // $document.find('body').css('background','none')
         $scope.check = true;
@@ -130,7 +149,7 @@ function questionController($scope, $http, $log, $document, $state,$rootScope) {
         };
         // console.log(sessionData);
 
-        // $http({
+            // $http({
             // method: 'POST',
             // headers: { 'Content-type': 'application/json','charset':'utf-8'},
             // data: {
@@ -142,7 +161,7 @@ function questionController($scope, $http, $log, $document, $state,$rootScope) {
                 
             // })
             // .error(function(err){
-                // console.log("error",err);
+            //     console.log("error",err);
             // });
     };
 
@@ -195,6 +214,7 @@ $scope.click = false;
             if($scope.click !=true) 
             {
                 answer ="";
+
                 $scope.IsRight=false;
 
             }
@@ -260,21 +280,22 @@ $scope.click = false;
             // headers: { 'Content-type': 'application/json','charset':'utf-8'},
             // data: {
             // "ItemType": $scope.ItemType,
-                // "QuestionNumber": $scope.QuestionNumber,
-                // "Answer": $scope.Answer, 
-                // "IsRight": $scope.IsRight,
-                // "Duration": $scope.finaltime,
-                // "User_SessionId": $scope.sessionId
+            //     "QuestionNumber": $scope.QuestionNumber,
+            //     "Answer": $scope.Answer, 
+            //     "IsRight": $scope.IsRight,
+            //     "Duration": $scope.finaltime,
+            //     "User_SessionId": $scope.sessionId
             // },
             // url: 'http://192.168.10.213/CEBAPI/api/AnswerService/CreateDWINFO'
             // }).success(function(res){
-                // console.log("success",res);
+            //     console.log("success",res);
             // })
             // .error(function(err){
-                // console.log("error",err);
+            //     console.log("error",err);
             // });
 
              
+
 
         endAssessment();
         $scope.isButtonClicked = true;
@@ -316,7 +337,7 @@ $scope.click = false;
 
             vm.display = minutes + ":" + seconds;
             if (vm.display == "00:00") {
-				$document.find('body').css('background','');
+                $document.find('body').css('background','');
                 $scope.timercheck = true;
                 console.log("Timer check:" + $scope.timercheck);
             }

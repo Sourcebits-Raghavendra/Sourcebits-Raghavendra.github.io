@@ -6439,13 +6439,6 @@ body {
   background: url("../images/ceb-background.jpg") no-repeat center center fixed;
   background-size: cover; }
 
-.remove-body-bg {
-  background: #fff; }
-
-.add-body-bg {
-  background: url("../images/ceb-background.jpg") no-repeat center center fixed;
-  background-size: cover; }
-
 header,
 footer {
   max-width: 800px; }
@@ -6671,7 +6664,8 @@ h1.section-heading.question {
   .table tfoot > tr > td {
     border: none;
     color: #FBFBFB;
-    padding: 4px 10px; }
+    padding: 4px 10px;
+    min-width: 30px; }
 
 .type3 table thead > tr > th:nth-child(even),
 .type3 table tbody > tr:nth-child(odd) > td:nth-child(even) {
@@ -6758,11 +6752,9 @@ h1.section-heading.question {
   padding-right: 10px;
   /*padding-top: 12px;*/
   /*//display: table-cell;*/
- 
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-align: center;
-  display: -webkit-flex; /* NEW */
-   
-  -webkit-align-items: center; 
   align-items: center;
   vertical-align: middle;
   color: #00adee;
@@ -6771,14 +6763,6 @@ h1.section-heading.question {
   .ceb-options .option-text {
     float: left;
     width: 85%;
-	align-items: center;
-	-webkit-align-items: center; 
-	 -ms-flex-align: center;
-	
-  display: -webkit-flex; /* NEW */
-	vertical-align: middle;
-	height: auto;
-    line-height: normal;
     padding-top: 10px;
     padding-bottom: 10px; }
 
@@ -7029,6 +7013,12 @@ btn-ceb2:active,
     margin-left: 0px; } }
 
 @media (max-width: 499px) {
+  .interaction-tab
+tbody > tr > td {
+    width: 15px; }
+  .customer-interaction
+tbody > tr > td {
+    min-width: 150px; }
   .type3 table thead > tr > th:nth-child(even),
   .type3 table tbody > tr:nth-child(odd) > td:nth-child(even) {
     width: 200px; }
@@ -7070,7 +7060,7 @@ input[type=radio]:not(old) + label {
   margin-left: 40px;
   padding-left: 28px;
   background: url("/images/answerRadioNormal.png") no-repeat 0 0;
-   }
+  line-height: 24px; }
 
 input[type=checkbox]:not(old):checked + label {
   background-position: 0 -24px; }
@@ -7122,6 +7112,16 @@ input[type=radio]:not(old):checked + label {
     margin-left: 10px; }
   .ceb-question-progressbar .row > div {
     padding: 0px; }
+
+.col-xs-2 {
+  margin-top: 40px;
+  background: green; }
+
+.col-xs-3 {
+  background: red; }
+
+.col-xs-4 {
+  background: green; }
 
 .questions .ng-enter,
 .instructions .ng-enter {
@@ -7229,10 +7229,14 @@ header {
   /*Hack to set the height to the entire screen height*/
   height: 100vh; }
 
-.exit-screen {
-  min-height: 300px;
-  position: relative; }
-
+.exit-screen{
+    min-height: 300px;
+    position: relative;
+}
+.exit-page{
+    height: 100vh;
+    position: relative;
+}
 .exit-screen.info-box-content-wrap {
   padding: 15px 15px 15px 15px !important; }
 
@@ -7258,36 +7262,65 @@ header {
 
 /*==========  Mobile First Method  ==========*/
 /* Custom, iPhone Retina */
+
+
 @media only screen and (min-width: 320px) {
   .tick-img {
     margin-left: 40px;
-    margin-top: 55px; }
+    margin-top: 20px; }
   .exit-button {
-    margin-top: 35px; } }
+    margin-top: 10px; } 
+
+    
+    
+
+  }
 
 @media only screen and (min-width: 375px) {
   .tick-img {
     margin-left: 60px;
     margin-top: 55px; }
   .exit-button {
-    margin-top: 35px; } }
+    margin-top: 35px; } 
+ 
+  
+  }
 
 @media only screen and (min-width: 425px) {
   .tick-img {
     margin-left: 90px;
     margin-top: 55px; }
   .exit-button {
-    margin-top: 35px; } }
+    margin-top: 35px; } 
+    .tablet-margin{
+           margin-top:60px;
+            
+ 
+  
+           
+        }
+
+  
+  }
 
 /* Extra Small Devices, Phones */
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 470px) {
   .tick-img {
     margin-left: 125px;
     margin-top: 55px; }
   .exit-button {
-    margin-top: 35px; } }
+    margin-top: 35px; } 
+ 
+  
+
+  }
 
 /* Small Devices, Tablets */
+@media only screen and (min-width: 480px) {
+    .tablet-margin {
+        margin-top:175px;
+    }
+  }
 @media only screen and (min-width: 768px) {
   .tick-img {
     margin-left: 145px;
@@ -7295,15 +7328,22 @@ header {
   .exit-button {
     margin-top: 35px; }
   .tablet-margin {
-    margin-top: 222px !important; } }
-
+   margin-top:222px;
+    }
+  body {
+    background: url("../images/ceb-background.jpg") no-repeat center center fixed;
+    background-size: cover; 
+   } }
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
   .tick-img {
     margin-left: 133px;
+
     margin-top: 55px; }
   .exit-button {
-    margin-top: 35px; } }
+    margin-top: 35px; } 
+   
+  }
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width: 1200px) {
@@ -7311,7 +7351,12 @@ header {
     margin-left: 130px;
     margin-top: 55px; }
   .exit-button {
-    margin-top: 35px; } }
+    margin-top: 35px; }  
+    .tablet-margin {
+   margin-top:222px;
+    } 
+  
+  }
 
 /*-------------------------------------------------
 SMACSS: LAYOUT - SECTION

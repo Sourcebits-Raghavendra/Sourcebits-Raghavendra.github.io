@@ -351,19 +351,19 @@
                 }, {
                     "question": "How many customer transactions are eligible for the Retailer Cash-Back Bonus?",
                     "options": [{
-                        "option": 0,
+                        "option": "0",
                         "isCorrect": "No"
                     }, {
-                        "option": 1,
+                        "option": "1",
                         "isCorrect": "No"
                     }, {
-                        "option": 2,
+                        "option": "2",
                         "isCorrect": "Yes"
                     }, {
-                        "option": 4,
+                        "option": "4",
                         "isCorrect": "No"
                     }, {
-                        "option": 5,
+                        "option": "5",
                         "isCorrect": "No"
                     }]
                 }, {

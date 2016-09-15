@@ -1,0 +1,333 @@
+{
+
+    "totalQuestions": 20,
+    "sets": [
+
+        {
+            "setNo": 1,
+            "questions": [{
+                "question": "Which day of the week is a paid holiday?",
+                "options": [{
+                    "option": "Friday",
+                    "isCorrect": "No"
+                }, {
+                    "option": "Tuesday",
+                    "isCorrect": "No"
+                }, {
+                    "option": "Thursday",
+                    "isCorrect": "Yes"
+                }, {
+                    "option": "Wednesday",
+                    "isCorrect": "No"
+                }]
+            }, {
+                "question": "What is the first payday of the month?",
+                "options": [{
+                    "option": "1",
+                    "isCorrect": "No"
+                }, {
+                    "option": "15",
+                    "isCorrect": "Yes"
+                }, {
+                    "option": "22",
+                    "isCorrect": "No"
+                }, {
+                    "option": "30",
+                    "isCorrect": "No"
+                }]
+            }, {
+                "question": "How many paydays are in the month?",
+                "options": [{
+                    "option": "1",
+                    "isCorrect": "No"
+                }, {
+                    "option": "2",
+                    "isCorrect": "Yes"
+                }, {
+                    "option": "3",
+                    "isCorrect": "No"
+                }, {
+                    "option": "4",
+                    "isCorrect": "No"
+                }]
+            }]
+        }, {
+            "setNo": 2,
+            "questions": [{
+
+                    "question": "If traveling south on I-785, which exit leads to the Atlanta International Airport?",
+                    "options": [{
+                        "option": "2, Airport Parkway",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "61, Atlanta Airport",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "71, Southdale Road",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "53, Airport Parkway",
+                        "isCorrect": "No"
+                    }]
+                }, {
+                    "question": "If traveling east on I-25, which directions would you follow after exiting off I-25?",
+                    "options": [{
+                        "option": "I-55 Northbound",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "I-65 Northbound",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "I-785 Southbound",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "I-55/65 Southbound",
+                        "isCorrect": "No"
+                    }]
+                }, {
+                    "question": "If following the I-785 Southbound directions, exit at Airport Parkway then:",
+                    "options": [{
+                        "option": "follow the signs to the airport.",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "turn left at the end of the ramp.",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "turn right at the end of the ramp.",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "continue straight on Airport Pky.",
+                        "isCorrect": "No"
+                    }]
+                }, {
+                    "question": "If traveling south on I-55/65, how many miles do you travel before reaching exit 53?",
+                    "options": [{
+                        "option": "2",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "5",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "53",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "61",
+                        "isCorrect": "No"
+                    }]
+                }]
+        },
+        {
+            "setNo": 3,
+            "questions": [{
+                    "question": "A $2,350.75 purchase order from Dorian Rugs is filed in drawer number:",
+                    "options": [{
+                        "option": "2",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "3",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "4",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "5",
+                        "isCorrect": "No"
+                    }]
+                },
+                {
+                    "question": "Which purchase order is filed in drawer 4?",
+                    "options": [{
+                        "option": "Motorcorp - $5,000",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Sterling Systems - $6,000",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Keller Industries - $5,000",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Multiplex Warehouse - $6,000",
+                        "isCorrect": "Yes"
+                    }]
+                },
+                {
+                    "question": "Which purchase order is filed in drawer 5?",
+                    "options": [{
+                        "option": "ITI Group - $7,000",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Blue Steel Inc. - $1,000",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Online Technology Corp - $6,000",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "Telecommunications International - $500",
+                        "isCorrect": "No"
+                    }]
+                },
+                {
+                    "question": "What drawer is a $250 purchase order from Clear Communications filed?",
+                    "options": [{
+                        "option": "2",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "3",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "4",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "5",
+                        "isCorrect": "No"
+                    }]
+                },
+                {
+                    "question": "What purchase order is filed in drawer 1?",
+                    "options": [{
+                        "option": "3-D Group - $250",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Austin Corp - $5,000",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Middleton Warehouse - $1,500",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "Redfield Industries - Closed",
+                        "isCorrect": "Yes"
+                    }]
+                }
+            ]
+        },
+        {
+            "setNo": 4,
+            "questions": [{
+                    "question": "What are the office hours for the human resource manager?",
+                    "options": [{
+                        "option": "7am-3pm",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "9am-5pm",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "10am-6pm",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "telecommuting",
+                        "isCorrect": "No"
+                    }]
+                }, {
+                    "question": "What time must John, a programmer in the production department, start work?",
+                    "options": [{
+                        "option": "7am",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "9am",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "10am",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "12pm",
+                        "isCorrect": "No"
+                    }]
+                }, {
+                    "question": "What are the office hours for Margaret, a sales associate conducting sales calls from her office?",
+                    "options": [{
+                        "option": "7am-3pm",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "9am-5pm",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "10am-6pm",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "telecommuting",
+                        "isCorrect": "No"
+                    }]
+                }, {
+                    "question": "What are the office hours for Sharon, a production clerk?",
+                    "options": [{
+                        "option": "7am-3pm",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "9am-5pm",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "10am-6pm",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "telecommuting",
+                        "isCorrect": "No"
+                    }]
+                }]
+        },
+		{
+            "setNo": 5,
+            "questions": [{
+                    "question": "Which device is used to make 15 copies of a 4-page hard-copy document?",
+                    "options": [{
+                        "option": "fax machine",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "main copier",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "desktop copier",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "network printer",
+                        "isCorrect": "No"
+                    }]
+                }, {
+                    "question": "Which device is used to make a copy of a 3-page hard-copy document?",
+                    "options": [{
+                        "option": "fax machine",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "main copier",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "desktop copier",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "network printer",
+                        "isCorrect": "No"
+                    }]
+                }, {
+                    "question": "Which device is used to make 30 copies of a single-page hard-copy document? ",
+                    "options": [{
+                        "option": "fax machine",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "main copier",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "desktop copier",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "network printer",
+                        "isCorrect": "No"
+                    }]
+                }, {
+                    "question": "Which device is used to make a single copy of a single-page hard-copy document? ",
+                    "options": [{
+                        "option": "fax machine",
+                        "isCorrect": "Yes"
+                    }, {
+                        "option": "main copier",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "desktop copier",
+                        "isCorrect": "No"
+                    }, {
+                        "option": "network printer",
+                        "isCorrect": "No"
+                    }]
+                }]
+        }
+
+    ]
+}
